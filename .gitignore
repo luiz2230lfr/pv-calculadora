@@ -1,0 +1,13 @@
+# Arquivos originais enviados (pesados / não publicados)
+materiais-novos/
+
+# Configurações locais do Claude (mantém só o servidor de visualização)
+.claude/*
+!.claude/launch.json
+!.claude/servidor.mjs
+
+# Lixo do sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+*.log

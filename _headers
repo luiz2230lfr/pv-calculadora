@@ -1,0 +1,23 @@
+# Regras de cache e segurança para a hospedagem (Cloudflare Pages lê este arquivo automaticamente)
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Imagens e vídeo: guardados no aparelho da visitante por 30 dias
+/imagens/*
+  Cache-Control: public, max-age=2592000
+
+# Estilos e scripts: 1 dia
+/estilos.css
+  Cache-Control: public, max-age=86400
+/script.js
+  Cache-Control: public, max-age=86400
+
+# Links de checkout e a própria página: sempre conferir se há versão nova
+/config.js
+  Cache-Control: no-cache
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache

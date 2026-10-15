@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Precificação para Cabeleireiras</title>
+  <meta name="description" content="Descubra quanto cobrar por cada serviço do seu salão em poucos minutos, sem fazer contas complicadas.">
+  <meta name="theme-color" content="#F8F4EF">
+  <meta property="og:title" content="Pare de pagar para trabalhar!">
+  <meta property="og:description" content="Descubra quanto cobrar por cada serviço do seu salão em poucos minutos, sem fazer contas complicadas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="imagens/marca/compartilhar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="icon" type="image/png" sizes="48x48" href="imagens/marca/icone-48.png">
+  <link rel="apple-touch-icon" href="imagens/marca/icone-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <!-- Ícones (estilo Lucide) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-calculadora" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
+      <symbol id="i-tesoura" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+      <symbol id="i-recibo" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></symbol>
+      <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-tabela" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M12 3v18"/></symbol>
+      <symbol id="i-brilho" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"/></symbol>
+      <symbol id="i-livro" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-celular" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+      <symbol id="i-mensagem" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-lapis" viewBox="0 0 24 24"><path d="M21.17 6.81a1 1 0 0 0-3.99-3.99L3.84 16.17a2 2 0 0 0-.5.83l-1.32 4.35a.5.5 0 0 0 .62.62l4.35-1.32a2 2 0 0 0 .83-.5z"/><path d="m15 5 4 4"/></symbol>
+      <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-raio" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+      <symbol id="i-cadeado" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-presente" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+      <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-coroa" viewBox="0 0 24 24"><path d="M11.56 3.27a.5.5 0 0 1 .88 0l2.95 5.6a1 1 0 0 0 1.52.29l4.27-3.66a.5.5 0 0 1 .82.5l-2.83 10.25A1 1 0 0 1 18.2 17H5.8a1 1 0 0 1-.96-.75L2.01 6a.5.5 0 0 1 .82-.5l4.27 3.66a1 1 0 0 0 1.52-.3z"/><path d="M5 21h14"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho__interno">
+      <a class="marca" href="#inicio" aria-label="Calculadora de Precificação para Cabeleireiras — início">
+        <img class="marca__simbolo" src="imagens/marca/simbolo.webp" alt="" width="90" height="104" fetchpriority="high">
+        <img class="marca__nome" src="imagens/marca/nome.webp" alt="Calculadora de Precificação para Cabeleireiras" width="480" height="76" fetchpriority="high">
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- DOBRA 1 | HERO -->
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="container hero__grade">
+        <div class="hero__texto" data-revelar>
+          <h1 id="hero-titulo" class="hero__titulo">Pare de pagar para trabalhar!</h1>
+          <p class="hero__descricao">Descubra quanto cobrar por cada serviço do seu salão em poucos minutos, sem fazer contas complicadas.</p>
+          <a class="botao botao--grande" href="#planos">Quero descobrir quanto cobrar <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          <p class="seguranca">
+            <span><svg class="icone" aria-hidden="true"><use href="#i-raio"/></svg>Acesso imediato</span>
+            <span class="seguranca__ponto" aria-hidden="true">•</span>
+            <span><svg class="icone" aria-hidden="true"><use href="#i-cadeado"/></svg>Compra segura</span>
+            <span class="seguranca__ponto" aria-hidden="true">•</span>
+            <span><svg class="icone" aria-hidden="true"><use href="#i-escudo"/></svg>Garantia de até 30 dias</span>
+          </p>
+        </div>
+
+        <div class="hero__visual" data-revelar>
+          <div class="hero__circulo" aria-hidden="true"></div>
+          <div class="celular celular--hero">
+            <div class="celular__tela celular__tela--video">
+              <video class="video-demo" muted loop playsinline preload="none" poster="imagens/video/demonstracao-capa.webp" aria-label="Demonstração do aplicativo: tela inicial, valor da hora, calculadora e tabela de preços" width="480" height="1038">
+                <source src="imagens/video/demonstracao.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="flutuante flutuante--a" aria-hidden="true">
+            <span class="flutuante__icone"><svg class="icone"><use href="#i-calculadora"/></svg></span>
+            Calculadora automática de preços
+          </div>
+          <div class="flutuante flutuante--b" aria-hidden="true">
+            <span class="flutuante__icone"><svg class="icone"><use href="#i-celular"/></svg></span>
+            Acesso pelo celular
+          </div>
+          <div class="flutuante flutuante--c" aria-hidden="true">
+            <span class="flutuante__icone"><svg class="icone"><use href="#i-mensagem"/></svg></span>
+            Suporte pelo WhatsApp
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 2 | O QUE VOCÊ RECEBE -->
+    <section class="secao secao--branca" id="o-que-recebe" aria-labelledby="recebe-titulo">
+      <div class="container recebe">
+        <div class="recebe__texto" data-revelar>
+          <h2 id="recebe-titulo" class="titulo-secao">O que você recebe</h2>
+          <p class="subtitulo">Tudo o que você precisa para descobrir quanto cobrar, direto no seu celular:</p>
+        </div>
+
+        <ul class="topicos" data-revelar>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Calculadora automática de preços</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Serviços de cabelo já cadastrados e personalizáveis</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Cálculo do valor da sua hora de trabalho</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Cálculo dos custos de cada atendimento</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Tabela de preços personalizada</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Guia rápido de utilização</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Acesso pelo celular e suporte pelo WhatsApp</li>
+        </ul>
+
+        <div class="recebe__acao">
+          <a class="botao" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 3 | COMO FUNCIONA -->
+    <section class="secao secao--nude" id="como-funciona" aria-labelledby="passos-titulo">
+      <div class="container">
+        <h2 id="passos-titulo" class="titulo-secao titulo-secao--centro" data-revelar>Descubra quanto cobrar em 3 passos simples!</h2>
+
+        <ol class="passos">
+          <li class="passo" data-revelar>
+            <span class="passo__numero" aria-hidden="true">1</span>
+            <div class="passo__cartao">
+              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-tesoura"/></svg></span>
+              <h3 class="passo__titulo"><span class="sr-only">1. </span>Escolha o serviço</h3>
+              <p>Selecione corte, escova, progressiva ou cadastre seus próprios serviços.</p>
+            </div>
+          </li>
+          <li class="passo" data-revelar>
+            <span class="passo__numero" aria-hidden="true">2</span>
+            <div class="passo__cartao">
+              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-lapis"/></svg></span>
+              <h3 class="passo__titulo"><span class="sr-only">2. </span>Informe seus valores</h3>
+              <p>Preencha os custos, o tempo de atendimento e quanto deseja lucrar.</p>
+            </div>
+          </li>
+          <li class="passo" data-revelar>
+            <span class="passo__numero" aria-hidden="true">3</span>
+            <div class="passo__cartao">
+              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-calculadora"/></svg></span>
+              <h3 class="passo__titulo"><span class="sr-only">3. </span>Descubra quanto cobrar</h3>
+              <p>A calculadora faz as contas e mostra o preço do serviço, considerando seus custos e o lucro desejado.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="fecho" data-revelar>
+          <p class="fecho__frase"><span>Sem fórmulas difíceis.</span> <span>Sem planilhas.</span> <strong>Tudo pelo celular.</strong></p>
+          <a class="botao" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 4 | PROVA SOCIAL
+         OCULTA até haver depoimentos reais e autorizados (fotos em imagens/depoimentos/).
+         Para mostrar de novo: remover o atributo "hidden" abaixo. -->
+    <section class="secao secao--cafe" id="depoimentos" aria-labelledby="depoimentos-titulo" hidden>
+      <div class="container">
+        <h2 id="depoimentos-titulo" class="titulo-secao titulo-secao--centro titulo-secao--claro" data-revelar>Veja o que outras cabeleireiras estão dizendo!</h2>
+        <p class="subtitulo subtitulo--centro subtitulo--claro" data-revelar>Espaço reservado para inserir de 2 a 3 depoimentos reais de clientes que utilizaram a calculadora, com autorização para publicação.</p>
+
+        <div class="depoimentos">
+          <figure class="depoimento" data-revelar>
+            <div class="depoimento__print slot" data-rotulo="Print do depoimento 1">
+              <img src="imagens/depoimentos/depoimento-1.png" alt="Depoimento de cliente 1" width="600" height="750" loading="lazy" onerror="this.parentNode.classList.add('slot--vazio');this.remove()">
+            </div>
+          </figure>
+          <figure class="depoimento" data-revelar>
+            <div class="depoimento__print slot" data-rotulo="Print do depoimento 2">
+              <img src="imagens/depoimentos/depoimento-2.png" alt="Depoimento de cliente 2" width="600" height="750" loading="lazy" onerror="this.parentNode.classList.add('slot--vazio');this.remove()">
+            </div>
+          </figure>
+          <figure class="depoimento" data-revelar>
+            <div class="depoimento__print slot" data-rotulo="Print do depoimento 3">
+              <img src="imagens/depoimentos/depoimento-3.png" alt="Depoimento de cliente 3" width="600" height="750" loading="lazy" onerror="this.parentNode.classList.add('slot--vazio');this.remove()">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 5 | BÔNUS -->
+    <section class="secao secao--branca" id="bonus" aria-labelledby="bonus-titulo">
+      <div class="container">
+        <h2 id="bonus-titulo" class="titulo-secao titulo-secao--centro" data-revelar>Garanta o Premium e receba 5 bônus exclusivos!</h2>
+
+        <div class="bonus-grade">
+          <article class="bonus" data-revelar>
+            <div class="bonus__imagem">
+              <img src="imagens/bonus/bonus-01-800.webp" srcset="imagens/bonus/bonus-01-400.webp 400w, imagens/bonus/bonus-01-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup das 20 mensagens prontas para comunicar aumento de preços" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="bonus__corpo">
+              <span class="etiqueta">BÔNUS 01</span>
+              <h3 class="bonus__titulo">20 mensagens prontas para comunicar aumento de preços</h3>
+              <p>Avise suas clientes sobre reajustes sem ficar insegura.</p>
+              <div class="bonus__rodape">
+                <span class="bonus__valor">Valor estimado: R$ 37,00</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="bonus" data-revelar>
+            <div class="bonus__imagem">
+              <img src="imagens/bonus/bonus-02-800.webp" srcset="imagens/bonus/bonus-02-400.webp 400w, imagens/bonus/bonus-02-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup das 15 respostas prontas para clientes que pedem desconto" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="bonus__corpo">
+              <span class="etiqueta">BÔNUS 02</span>
+              <h3 class="bonus__titulo">15 respostas prontas para clientes que pedem desconto</h3>
+              <p>Saiba o que dizer quando uma cliente questionar seus preços.</p>
+              <div class="bonus__rodape">
+                <span class="bonus__valor">Valor estimado: R$ 27,00</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="bonus" data-revelar>
+            <div class="bonus__imagem">
+              <img src="imagens/bonus/bonus-03-800.webp" srcset="imagens/bonus/bonus-03-400.webp 400w, imagens/bonus/bonus-03-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup da planilha de controle de gastos do salão" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="bonus__corpo">
+              <span class="etiqueta">BÔNUS 03</span>
+              <h3 class="bonus__titulo">Planilha de controle de gastos do salão</h3>
+              <p>Separe seus gastos pessoais das despesas do salão.</p>
+              <div class="bonus__rodape">
+                <span class="bonus__valor">Valor estimado: R$ 47,00</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="bonus" data-revelar>
+            <div class="bonus__imagem">
+              <img src="imagens/bonus/bonus-04-800.webp" srcset="imagens/bonus/bonus-04-400.webp 400w, imagens/bonus/bonus-04-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup da tabela de rendimento de produtos capilares" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="bonus__corpo">
+              <span class="etiqueta">BÔNUS 04</span>
+              <h3 class="bonus__titulo">Tabela de rendimento de produtos capilares</h3>
+              <p>Saiba quantos atendimentos você consegue fazer com cada produto.</p>
+              <div class="bonus__rodape">
+                <span class="bonus__valor">Valor estimado: R$ 37,00</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="bonus" data-revelar>
+            <div class="bonus__imagem">
+              <img src="imagens/bonus/bonus-05-800.webp" srcset="imagens/bonus/bonus-05-400.webp 400w, imagens/bonus/bonus-05-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup das 20 mensagens prontas para trazer clientes de volta" width="800" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="bonus__corpo">
+              <span class="etiqueta">BÔNUS 05</span>
+              <h3 class="bonus__titulo">20 mensagens prontas para trazer clientes de volta</h3>
+              <p>Entre em contato com clientes que sumiram e incentive novos agendamentos pelo WhatsApp.</p>
+              <div class="bonus__rodape">
+                <span class="bonus__valor">Valor estimado: R$ 47,00</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="total-bonus" data-revelar>
+          <span class="total-bonus__icone"><svg class="icone" aria-hidden="true"><use href="#i-presente"/></svg></span>
+          <div>
+            <p class="total-bonus__valor">Valor estimado dos 5 bônus: <strong>R$ 195,00</strong></p>
+            <p class="total-bonus__texto">Você recebe os 5 bônus junto com sua calculadora ao escolher o Plano Premium, sem custo adicional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 6 | OFERTA -->
+    <section class="secao secao--nude" id="planos" aria-labelledby="planos-titulo">
+      <div class="container">
+        <h2 id="planos-titulo" class="titulo-secao titulo-secao--centro" data-revelar>Pare de adivinhar seus preços. Escolha seu plano!</h2>
+
+        <div class="planos">
+          <article class="plano" aria-labelledby="plano-basico" data-revelar>
+            <h3 id="plano-basico" class="plano__nome">PLANO BÁSICO</h3>
+            <p class="plano__de">De <s>R$ 67,00</s></p>
+            <p class="plano__preco"><span class="plano__moeda">R$</span> <span class="plano__valor">14,90</span></p>
+            <p class="plano__pagamento">Pagamento único</p>
+            <ul class="lista-check">
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Aplicativo completo de precificação para cabeleireiras</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Acesso pelo celular</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Guia visual de preenchimento</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Suporte pelo WhatsApp</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Garantia de 7 dias</li>
+            </ul>
+            <a class="botao botao--bloco botao--contorno" href="#planos" data-checkout="basico">Quero o Plano Básico</a>
+          </article>
+
+          <article class="plano plano--premium" aria-labelledby="plano-premium" data-revelar>
+            <span class="plano__selo"><svg class="icone" aria-hidden="true"><use href="#i-coroa"/></svg>MAIS COMPLETO</span>
+            <h3 id="plano-premium" class="plano__nome">PLANO PREMIUM</h3>
+            <p class="plano__de">De <s>R$ 147,00</s></p>
+            <p class="plano__preco"><span class="plano__moeda">R$</span> <span class="plano__valor">29,90</span></p>
+            <p class="plano__pagamento">Pagamento único</p>
+            <div class="plano__beneficios">
+            <ul class="lista-check">
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Aplicativo completo de precificação para cabeleireiras</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Acesso pelo celular</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Guia visual de preenchimento</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Suporte pelo WhatsApp</li>
+            </ul>
+            <p class="plano__subtitulo">Você também recebe 5 bônus exclusivos:</p>
+            <ul class="lista-check lista-check--bonus">
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>20 mensagens para comunicar aumento de preços</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>15 respostas para pedidos de desconto</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Planilha de controle de gastos do salão</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Tabela de rendimento de produtos capilares</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>20 mensagens para trazer clientes de volta</li>
+            </ul>
+            <ul class="lista-check lista-check--garantia">
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg><strong>Garantia estendida de 30 dias</strong></li>
+            </ul>
+            </div>
+            <a class="botao botao--bloco botao--dourado" href="#planos" data-checkout="premium">Quero o Premium com todos os bônus</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 7 | GARANTIA -->
+    <section class="secao secao--branca" id="garantia" aria-labelledby="garantia-titulo">
+      <div class="container garantia" data-revelar>
+        <div class="garantia__selo" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="garantia__aneis">
+            <circle cx="100" cy="100" r="96" fill="none" stroke="#C7A26A" stroke-width="2"/>
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#C7A26A" stroke-width="1" stroke-dasharray="3 5"/>
+            <circle cx="100" cy="100" r="76" fill="#4A342E"/>
+          </svg>
+          <svg class="garantia__escudo"><use href="#i-escudo"/></svg>
+        </div>
+        <div class="garantia__texto">
+          <h2 id="garantia-titulo" class="titulo-secao">Teste sua calculadora sem correr riscos!</h2>
+          <ul class="prazos">
+            <li class="prazo"><span class="prazo__plano">Plano Básico:</span> <strong>7 dias de garantia</strong></li>
+            <li class="prazo prazo--premium"><span class="prazo__plano">Plano Premium:</span> <strong>30 dias de garantia</strong></li>
+          </ul>
+          <p>Use sua calculadora com tranquilidade. Se achar que ela não é para você, basta pedir o reembolso dentro do prazo de garantia do seu plano.</p>
+          <p class="garantia__destaque">Devolvemos <mark>100% do valor pago</mark>.</p>
+          <p class="garantia__fim">Sem perguntas. Sem burocracia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 8 | PERGUNTAS FREQUENTES -->
+    <section class="secao secao--off" id="perguntas" aria-label="Perguntas frequentes">
+      <div class="container container--estreito">
+        <div class="faq">
+          <details class="faq__item" data-revelar>
+            <summary>1. Preciso entender de finanças ou saber fazer cálculos?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="faq__resposta"><p>Não! Basta informar seus gastos, o tempo de atendimento e quanto deseja lucrar. A calculadora faz as contas para você.</p></div>
+          </details>
+          <details class="faq__item" data-revelar>
+            <summary>2. Funciona no celular?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="faq__resposta"><p>Sim! Você acessa pelo navegador do celular ou computador, sem precisar instalar nada.</p></div>
+          </details>
+          <details class="faq__item" data-revelar>
+            <summary>3. Posso cadastrar meus próprios serviços?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="faq__resposta"><p>Sim! O aplicativo já vem com serviços como corte, escova e progressiva cadastrados. Você pode editar os valores e adicionar outros serviços quando quiser.</p></div>
+          </details>
+          <details class="faq__item" data-revelar>
+            <summary>4. Como recebo minha calculadora?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="faq__resposta"><p>O acesso é liberado após a confirmação do pagamento. Tudo é feito pela internet.</p></div>
+          </details>
+          <details class="faq__item" data-revelar>
+            <summary>5. Qual é a diferença entre o Básico e o Premium?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="faq__resposta"><p>O Básico inclui a calculadora com todos os recursos e suporte pelo WhatsApp. O Premium oferece tudo isso, mais os 5 bônus e garantia de 30 dias.</p></div>
+          </details>
+          <details class="faq__item" data-revelar>
+            <summary>6. E se eu tiver dúvidas ou não gostar?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="faq__resposta"><p>Você pode chamar nosso suporte pelo WhatsApp. Se não ficar satisfeita, basta pedir o reembolso dentro do prazo de garantia: 7 dias no Básico ou 30 dias no Premium.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__interno">
+      <img class="rodape__logo" src="imagens/marca/logo-completa.webp" alt="Calculadora de Precificação para Cabeleireiras" width="440" height="276" loading="lazy" decoding="async">
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
