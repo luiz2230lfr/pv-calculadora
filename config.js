@@ -10,4 +10,7 @@
 window.CONFIG = {
   CHECKOUT_BASICO_URL: "",   // PENDENTE: link do checkout do Plano Básico (R$ 14,90)
   CHECKOUT_PREMIUM_URL: "",  // PENDENTE: link do checkout do Plano Premium (R$ 29,90)
+
+  // Microsoft Clarity (mapas de calor e gravações). Deixe "" para desligar.
+  CLARITY_ID: "yy85gv6bpr",
 };

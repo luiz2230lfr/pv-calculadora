@@ -21,6 +21,23 @@
     }
   });
 
+  // Microsoft Clarity: carrega só depois que a página terminou de abrir (não atrasa o carregamento).
+  if (/^[a-z0-9]+$/i.test(config.CLARITY_ID || "")) {
+    var carregarClarity = function () {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", config.CLARITY_ID);
+    };
+    var quandoOcioso = function () {
+      if ("requestIdleCallback" in window) requestIdleCallback(carregarClarity, { timeout: 3000 });
+      else setTimeout(carregarClarity, 1500);
+    };
+    if (document.readyState === "complete") quandoOcioso();
+    else window.addEventListener("load", quandoOcioso, { once: true });
+  }
+
   var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Vídeo de demonstração: só começa a baixar depois que a página carregou (a capa aparece antes),
