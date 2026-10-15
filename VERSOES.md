@@ -4,6 +4,11 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.2.0 — 15/10/2026
+- Copy nova: topo ("Seu salão dá lucro ou você paga para trabalhar?"), títulos de "O que você recebe", bônus e planos, passo 3 e frase final de "Como funciona", textos dos bônus.
+- Nova pergunta 7 no FAQ (atendimento em casa / trabalhando sozinha).
+- Celular: topo mais compacto (mostra mais do vídeo na primeira tela) e espaços mais uniformes entre e dentro das seções. Computador sem mudança visual.
+
 ## v1.1.0 — 15/10/2026
 - Microsoft Clarity instalado (mapas de calor e gravações de navegação), ID no `config.js`.
 - Carrega só depois que a página abriu, sem afetar a velocidade.

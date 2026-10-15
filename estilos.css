@@ -257,6 +257,13 @@ s { text-decoration-thickness: 2px; }
   .flutuante--a { left: -2%; }
   .flutuante--b { right: -2%; }
 }
+/* Primeira dobra mais compacta no celular */
+@media (max-width: 767px) {
+  .hero { padding-top: var(--e3); }
+  .hero__grade { gap: var(--e3); }
+  .seguranca { margin-top: var(--e2); }
+  .hero__visual { padding-top: var(--e2); }
+}
 
 /* ---------- Layout dividido (texto + imagem) ---------- */
 .dividido { display: grid; gap: var(--e8); align-items: center; }
@@ -692,3 +699,18 @@ s { text-decoration-thickness: 2px; }
   100% { opacity: 0;    transform: scale(1.06, 1.04); }
 }
 @media (prefers-reduced-motion: reduce) { .plano--premium { animation: none !important; } .plano--premium::after { animation: none !important; opacity: 0; } }
+
+/* Refinamento de espaçamentos no celular: ritmo mais compacto entre e dentro das dobras */
+@media (max-width: 767px) {
+  .secao { padding-block: var(--e8); }
+  .hero { padding-bottom: var(--e8); }
+  .topicos, .passos, .bonus-grade, .planos { margin-top: var(--e5); }
+  .total-bonus { margin-top: var(--e5); }
+  .fecho { margin-top: var(--e6); }
+  .passo { gap: 12px; }
+  .passo__cartao { padding: 20px; }
+  .bonus__corpo { padding: 20px; }
+  .garantia { gap: var(--e4); }
+  .faq__item summary { padding-inline: 20px; }
+  .faq__resposta { padding: 0 20px 20px; }
+}
