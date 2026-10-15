@@ -1,0 +1,7 @@
+# Arquivos internos que não devem ficar acessíveis no site publicado
+.claude
+materiais-novos
+LEIA-ME.md
+VERSOES.md
+_headers
+.gitignore
