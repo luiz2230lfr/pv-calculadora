@@ -4,6 +4,10 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.3.0 — 22/10/2026
+- Bônus 03 trocado: sai a "Planilha de controle de gastos do salão", entra o "Catálogo de Serviços Pronto para Editar" (imagem nova em WebP 400/800, título, descrição e texto alternativo).
+- Lista do Plano Premium atualizada com o novo bônus. Valor estimado do bônus continua R$ 47,00 (total dos bônus R$ 195,00).
+
 ## v1.2.0 — 15/10/2026
 - Copy nova: topo ("Seu salão dá lucro ou você paga para trabalhar?"), títulos de "O que você recebe", bônus e planos, passo 3 e frase final de "Como funciona", textos dos bônus.
 - Nova pergunta 7 no FAQ (atendimento em casa / trabalhando sozinha).
