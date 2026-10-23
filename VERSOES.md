@@ -4,6 +4,10 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.4.0 — 23/10/2026
+- Links de checkout da Payt no `config.js` (Básico e Premium): os botões dos planos agora levam ao pagamento.
+- UTMify instalada no `<head>` (pixel e script de UTMs), códigos colados exatamente como fornecidos.
+
 ## v1.3.0 — 22/10/2026
 - Bônus 03 trocado: sai a "Planilha de controle de gastos do salão", entra o "Catálogo de Serviços Pronto para Editar" (imagem nova em WebP 400/800, título, descrição e texto alternativo).
 - Lista do Plano Premium atualizada com o novo bônus. Valor estimado do bônus continua R$ 47,00 (total dos bônus R$ 195,00).
