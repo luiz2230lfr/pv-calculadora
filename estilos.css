@@ -714,3 +714,14 @@ s { text-decoration-thickness: 2px; }
   .faq__item summary { padding-inline: 20px; }
   .faq__resposta { padding: 0 20px 20px; }
 }
+
+/* Planos no celular: ao clicar no botão do topo, o Básico e o começo do Premium aparecem juntos na tela */
+@media (max-width: 767px) {
+  #planos { scroll-margin-top: calc(0px - var(--e8)); } /* para logo acima do título, sem o respiro todo da seção */
+  .planos { margin-top: var(--e3); }
+  .plano:not(.plano--premium) { padding: var(--e3) var(--e3) var(--e3); }
+  .plano:not(.plano--premium) .plano__de { margin-top: var(--e1); }
+  .plano:not(.plano--premium) .plano__valor { font-size: 2.5rem; }
+  .plano:not(.plano--premium) .botao { min-height: 48px; padding-block: 12px; }
+  .plano:not(.plano--premium) .lista-check { gap: 6px; margin: var(--e2) 0 var(--e3); padding-top: var(--e2); font-size: 0.9375rem; }
+}

@@ -4,6 +4,9 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.5.0 — 23/10/2026
+- Celular: ao clicar no botão do topo, a página para logo acima do título dos planos e o card do Básico ficou mais compacto. Assim o Premium (pulsando) já aparece na mesma tela, logo abaixo do Básico. Computador sem mudança.
+
 ## v1.4.0 — 23/10/2026
 - Links de checkout da Payt no `config.js` (Básico e Premium): os botões dos planos agora levam ao pagamento.
 - UTMify instalada no `<head>` (pixel e script de UTMs), códigos colados exatamente como fornecidos.
