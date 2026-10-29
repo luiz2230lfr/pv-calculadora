@@ -4,6 +4,11 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.9.0 — 29/10/2026 (página A)
+- Modo sem rastreio: abrir com `?semrastreio=1` no fim do endereço não carrega UTMify (pixel e UTMs) nem Clarity, e mostra um aviso "Modo sem rastreio" no canto. Sem o parâmetro, a página funciona exatamente como antes (o código da UTMify continua idêntico, só ganhou um "if" em volta). `script.js?v=1.9.0` para não usar o arquivo guardado.
+- Cópia local sem rastreio (fora do site): pasta "2 - Página de Vendas - Visualizar sem rastreio", abre com dois cliques no index.html. Refeita por `python ferramentas/gerar-copia-sem-rastreio.py` (regra no LEIA-ME). Cópia sem rastreio atualizada.
+- Velocidade (página normal, sem o parâmetro, comparada com a v1.8.1 no mesmo navegador a 390 px): mesmos 19 pedidos e 185 KB; +0,5 KB comprimido no total (o aviso e o "if"); tempo de carregamento igual, dentro da variação.
+
 ## v1.8.1 — 29/10/2026 (página A)
 - `estilos.css?v=1.8.1`: quem já tinha visitado não fica com o visual antigo (sem a fonte nova) guardado no navegador.
 

@@ -22,7 +22,15 @@
   });
 
   // Microsoft Clarity: carrega só depois que a página terminou de abrir (não atrasa o carregamento).
-  if (/^[a-z0-9]+$/i.test(config.CLARITY_ID || "")) {
+  // Modo sem rastreio (?semrastreio=1): não carrega o Clarity e mostra um aviso discreto no canto.
+  if (window.SEM_RASTREIO) {
+    var aviso = document.createElement("div");
+    aviso.textContent = "Modo sem rastreio";
+    aviso.setAttribute("style", "position:fixed;left:12px;bottom:12px;z-index:50;padding:6px 12px;border-radius:999px;background:#3B2925;color:#F8F4EF;font:700 12px/1.2 system-ui,sans-serif;opacity:.85;pointer-events:none");
+    document.body.appendChild(aviso);
+  }
+
+  if (!window.SEM_RASTREIO && /^[a-z0-9]+$/i.test(config.CLARITY_ID || "")) {
     var carregarClarity = function () {
       (function (c, l, a, r, i, t, y) {
         c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
