@@ -57,6 +57,16 @@
     else window.addEventListener("load", iniciar, { once: true });
   });
 
+  // Depoimentos: setas (computador) andam um card para o lado no carrossel.
+  document.querySelectorAll("[data-depo]").forEach(function (seta) {
+    seta.addEventListener("click", function () {
+      var trilho = seta.parentNode.querySelector(".depoimentos");
+      var card = trilho.querySelector(".depoimento");
+      var passo = card ? card.getBoundingClientRect().width + 24 : 300;
+      trilho.scrollBy({ left: passo * Number(seta.getAttribute("data-depo")), behavior: reduzirMovimento ? "auto" : "smooth" });
+    });
+  });
+
   // Animação leve de entrada das seções (desligada para quem prefere menos movimento).
   var animaveis = document.querySelectorAll("[data-revelar]");
   if (reduzirMovimento || !("IntersectionObserver" in window)) {
