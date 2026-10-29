@@ -4,6 +4,9 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.8.1 — 29/10/2026 (página A)
+- `estilos.css?v=1.8.1`: quem já tinha visitado não fica com o visual antigo (sem a fonte nova) guardado no navegador.
+
 ## v1.8.0 — 29/10/2026 (página A)
 - Mais rápida no celular, sem mudar texto, visual, checkout ou rastreamento.
 - Fonte Plus Jakarta Sans guardada no próprio site (`fontes/`), no lugar do Google Fonts.
