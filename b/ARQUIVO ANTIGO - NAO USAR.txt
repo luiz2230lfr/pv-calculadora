@@ -1,0 +1,6 @@
+ARQUIVO ANTIGO - NÃO USAR
+
+Esta pasta é um rascunho antigo da página B, guardado só como histórico.
+A versão oficial da página B fica em:
+  Calculadora Salão - Página B (Teste AB) - Pronta para subir
+(no ar em https://pv-calculadora-b.vercel.app)

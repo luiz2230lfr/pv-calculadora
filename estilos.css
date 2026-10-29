@@ -725,3 +725,34 @@ s { text-decoration-thickness: 2px; }
   .plano:not(.plano--premium) .botao { min-height: 48px; padding-block: 12px; }
   .plano:not(.plano--premium) .lista-check { gap: 6px; margin: var(--e2) 0 var(--e3); padding-top: var(--e2); font-size: 0.9375rem; }
 }
+
+/* DOBRA 4 | Depoimentos autorizados: faixa café com cards brancos em carrossel (deslizar) */
+.sobretitulo--claro { color: var(--dourado); }
+.depoimentos-carrossel { position: relative; margin-top: var(--e6); }
+.depoimentos {
+  display: flex; align-items: flex-start; gap: var(--e3);
+  margin: 0 calc(var(--e2) * -1); padding: var(--e1) var(--e2) var(--e3);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-padding-inline: var(--e2);
+  scrollbar-width: thin; scrollbar-color: rgba(199, 162, 106, 0.6) transparent;
+}
+.depoimento { flex: 0 0 min(78vw, 300px); max-width: none; padding: 10px; scroll-snap-align: center; }
+.depoimento__print { display: block; width: 100%; height: auto; aspect-ratio: auto; border-radius: var(--r-md); }
+.depoimentos__seta { display: none; }
+@media (min-width: 768px) {
+  .depoimentos { margin: 0; padding-inline: 0; scroll-padding-inline: 0; }
+  .depoimento { scroll-snap-align: start; }
+  .depoimentos__seta {
+    position: absolute; top: 50%; z-index: 2; transform: translateY(-50%);
+    display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%;
+    background: var(--dourado); color: var(--cafe-escuro); cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); transition: background-color 0.18s ease;
+  }
+  .depoimentos__seta:hover { background: #D4B37F; }
+  .depoimentos__seta .icone { width: 22px; height: 22px; }
+  .depoimentos__seta--ant { left: -20px; }
+  .depoimentos__seta--ant .icone { transform: rotate(90deg); }
+  .depoimentos__seta--prox { right: -20px; }
+  .depoimentos__seta--prox .icone { transform: rotate(-90deg); }
+}
+@media (max-width: 767px) { .depoimentos-carrossel { margin-top: var(--e5); } }
