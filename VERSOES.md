@@ -4,6 +4,10 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.6.0 — 29/10/2026 (página A)
+- Bônus novos do Premium, mesmo formato dos cards e mesmos valores (total R$ 195): Bônus 02 vira "20 respostas prontas para clientes que pedem desconto"; Bônus 03 vira "Kit Orçamento Profissional"; Bônus 05 vira "Kit de Controle de Clientes" (títulos, descrições, alt e imagens novas; `?v=2` nas imagens para não aparecer a antiga do cache). Bônus 01 e 04 iguais.
+- Lista de bônus do card Premium atualizada com os 5 nomes novos. Estrutura, copy do resto, preços, rastreamento e checkout sem mudança.
+
 ## v1.5.0 — 23/10/2026
 - Celular: ao clicar no botão do topo, a página para logo acima do título dos planos e o card do Básico ficou mais compacto. Assim o Premium (pulsando) já aparece na mesma tela, logo abaixo do Básico. Computador sem mudança.
 
