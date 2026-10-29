@@ -3,6 +3,12 @@
    Design system: escala de 8px, paleta oficial da marca, Plus Jakarta Sans
    ========================================================= */
 
+/* Fonte guardada no próprio site (mais rápido que buscar no Google Fonts) */
+@font-face { font-family: "Plus Jakarta Sans"; src: url("fontes/jakarta-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("fontes/jakarta-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("fontes/jakarta-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url("fontes/jakarta-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+
 :root {
   color-scheme: light;
 

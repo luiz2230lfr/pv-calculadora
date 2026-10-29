@@ -4,6 +4,13 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v1.8.0 — 29/10/2026 (página A)
+- Mais rápida no celular, sem mudar texto, visual, checkout ou rastreamento.
+- Fonte Plus Jakarta Sans guardada no próprio site (`fontes/`), no lugar do Google Fonts.
+- Capa do vídeo do topo carregada com prioridade; conexão antecipada com a UTMify.
+- Depoimentos com versão de 600 px e tamanho certo para cada tela.
+- Fontes guardadas no navegador por 1 ano (`vercel.json`).
+
 ## v1.7.0 — 29/10/2026 (página A)
 - Depoimentos de volta (dobra 4, entre "Como funciona" e os bônus): os mesmos 7 prints reais e autorizados da página B, na faixa café com cards brancos, em carrossel para deslizar (setas douradas no computador). Textos da seção iguais aos da B: "QUEM USA, CONTA" / "Mais segurança para cobrar." Imagens em `imagens/depoimentos/`.
 
