@@ -842,3 +842,7 @@ img, video { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: 
 .plano__precos .plano__preco { margin-top: var(--e1); }
 .plano__precos .plano__pagamento { margin-top: 10px; }
 .plano__garantias { margin-top: var(--e2); }
+
+/* Animação do card da oferta parada fora da tela (o script liga com .plano--visivel) */
+.js .plano--premium, .js .plano--premium::after { animation-play-state: paused; }
+.js .plano--premium.plano--visivel, .js .plano--premium.plano--visivel::after { animation-play-state: running; }

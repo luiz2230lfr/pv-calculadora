@@ -4,6 +4,9 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v2.0.3 — 30/10/2026 (página A)
+- Só velocidade, sem mudar layout nem textos: logos sem prioridade alta (a capa do vídeo fica com a prioridade), vídeo começa 2,5 s depois de a página carregar, saem os códigos que vigiavam cada toque e a roda do mouse (o limite de zoom fica na configuração da página, no gesto do iPhone e no Ctrl/Cmd com + ou -), animação do card da oferta só roda com o card na tela. Cópia sem rastreio atualizada.
+
 ## v2.0.2 — 30/10/2026 (página A)
 - Removida a linha "Total parcelado: R$ 37,08. Sem assinatura." do card; espaçamento do bloco de preço ajustado. `estilos.css?v=2.0.2`. Cópia sem rastreio atualizada.
 

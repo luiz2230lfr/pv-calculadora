@@ -48,7 +48,7 @@
 
   var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Vídeo de demonstração: só começa a baixar depois que a página carregou (a capa aparece antes),
+  // Vídeo de demonstração: só começa a baixar um pouco depois de a página carregar (a capa aparece antes),
   // toca quando está visível e pausa fora da tela. Quem prefere menos movimento vê só a capa.
   document.querySelectorAll(".video-demo").forEach(function (video) {
     if (reduzirMovimento) return;
@@ -61,8 +61,17 @@
         });
       }, { threshold: 0.25 }).observe(video);
     }
-    if (document.readyState === "complete") iniciar();
-    else window.addEventListener("load", iniciar, { once: true });
+    function iniciarDepois() { setTimeout(iniciar, 2500); }
+    if (document.readyState === "complete") iniciarDepois();
+    else window.addEventListener("load", iniciarDepois, { once: true });
+  });
+
+  // Card da oferta: a animação só roda enquanto o card está na tela.
+  document.querySelectorAll(".plano--premium").forEach(function (card) {
+    if (!("IntersectionObserver" in window)) { card.classList.add("plano--visivel"); return; }
+    new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) { card.classList.toggle("plano--visivel", e.isIntersecting); });
+    }).observe(card);
   });
 
   // Depoimentos: setas, bolinhas e deslizar ficam sincronizados.
@@ -132,15 +141,9 @@
     if (e.target.tagName === "IMG") e.preventDefault();
   });
 
-  // Zoom limitado (pedido do Luiz): pinça, Ctrl/Cmd com + ou - e Ctrl com a roda do mouse.
-  // Alguns navegadores ignoram isso por acessibilidade. A rolagem normal e o deslizar do carrossel continuam.
+  // Zoom limitado (pedido do Luiz): a configuração da página (viewport) mais o gesto no iPhone e Ctrl/Cmd com + ou -.
+  // Sem vigiar cada toque ou movimento da roda, para a página reagir mais rápido. Alguns navegadores ignoram o limite.
   document.addEventListener("gesturestart", function (e) { e.preventDefault(); });
-  document.addEventListener("touchmove", function (e) {
-    if (e.touches && e.touches.length > 1) e.preventDefault();
-  }, { passive: false });
-  document.addEventListener("wheel", function (e) {
-    if (e.ctrlKey) e.preventDefault();
-  }, { passive: false });
   document.addEventListener("keydown", function (e) {
     if ((e.ctrlKey || e.metaKey) && ["+", "-", "=", "_", "Add", "Subtract"].indexOf(e.key) !== -1) e.preventDefault();
   });
