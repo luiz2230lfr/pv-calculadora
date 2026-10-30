@@ -762,3 +762,75 @@ s { text-decoration-thickness: 2px; }
   .depoimentos__seta--prox .icone { transform: rotate(-90deg); }
 }
 @media (max-width: 767px) { .depoimentos-carrossel { margin-top: var(--e5); } }
+
+/* Oferta única (sem o Plano Básico): um card centralizado e a garantia em um só bloco */
+.planos--unica { max-width: 560px; }
+@media (min-width: 900px) { .planos--unica { grid-template-columns: 1fr; } }
+.prazos--unico { grid-template-columns: 1fr; max-width: 420px; }
+@media (max-width: 899px) { .prazos--unico { margin-inline: auto; } }
+
+/* Card da oferta: nome do produto, mockup e frase no topo; preço logo acima do botão */
+.plano__nome--produto { font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem); line-height: 1.3; letter-spacing: -0.01em; }
+.plano__mockup { display: block; width: 100%; max-width: 380px; height: auto; margin: var(--e2) auto 0; }
+.plano__apoio { margin-top: var(--e2); color: var(--nude-medio); line-height: 1.5; }
+.plano__precos { margin-bottom: var(--e3); padding-top: var(--e3); border-top: 1px solid rgba(248, 244, 239, 0.14); text-align: center; }
+.plano__precos .plano__de { margin-top: 0; }
+.plano__precos .plano__preco { justify-content: center; }
+/* Linha discreta abaixo do botão de compra (sem caixa, sem ícones) */
+.plano__garantias { margin-top: 12px; text-align: center; font-size: 0.8125rem; line-height: 1.5; color: var(--nude-medio); }
+.plano__garantias span { white-space: nowrap; }
+
+/* ===== v2.0.0 ===== */
+/* Depoimentos: setas creme nas laterais (fora das imagens), bolinhas abaixo, sem barra de rolagem */
+.depoimentos-carrossel { display: grid; grid-template-columns: 40px minmax(0, 1fr) 40px; align-items: center; gap: 6px; margin-inline: calc(var(--e1) * -1); }
+.depoimentos {
+  grid-column: 2; grid-row: 1; margin: 0; padding: var(--e1) 0; gap: var(--e2);
+  scroll-padding-inline: 0; scrollbar-width: none;
+}
+.depoimentos::-webkit-scrollbar { display: none; }
+.depoimento { flex: 0 0 100%; scroll-snap-align: start; }
+.depoimentos__seta,
+.depoimentos__seta--ant,
+.depoimentos__seta--prox {
+  position: static; transform: none; grid-row: 1;
+  display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%;
+  background: var(--off); color: var(--cafe-escuro); cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); transition: background-color 0.18s ease, opacity 0.18s ease;
+}
+.depoimentos__seta--ant { grid-column: 1; }
+.depoimentos__seta--prox { grid-column: 3; }
+.depoimentos__seta:hover { background: var(--nude-claro); }
+.depoimentos__seta:disabled { opacity: 0.35; cursor: default; }
+.depoimentos__seta .icone { width: 20px; height: 20px; }
+.depoimentos__seta--ant .icone { transform: rotate(90deg); }
+.depoimentos__seta--prox .icone { transform: rotate(-90deg); }
+@media (min-width: 768px) {
+  .depoimentos-carrossel { grid-template-columns: 48px minmax(0, 1fr) 48px; gap: var(--e2); margin-inline: 0; }
+  .depoimentos { gap: var(--e3); }
+  .depoimento { flex-basis: calc((100% - 2 * var(--e3)) / 3); scroll-snap-align: start; }
+  .depoimentos__seta, .depoimentos__seta--ant, .depoimentos__seta--prox { width: 48px; height: 48px; }
+}
+.depoimentos__bolinhas { display: flex; justify-content: center; flex-wrap: wrap; gap: 2px; margin-top: var(--e3); }
+.depoimentos__bolinhas button {
+  display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; background: transparent; cursor: pointer;
+}
+.depoimentos__bolinhas button::before {
+  content: ""; width: 8px; height: 8px; border-radius: var(--r-pill);
+  background: rgba(248, 244, 239, 0.35); transition: width 0.2s ease, background-color 0.2s ease;
+}
+.depoimentos__bolinhas button[aria-current="true"]::before { width: 20px; background: var(--dourado); }
+.depoimentos__acao { display: flex; justify-content: center; margin-top: var(--e5); }
+.botao--creme { background: var(--off); border-color: var(--off); color: var(--cafe-escuro); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); }
+.botao--creme:hover { background: var(--nude-claro); border-color: var(--nude-claro); color: var(--cafe-escuro); }
+
+/* Card da oferta */
+.plano__selo--quebra { white-space: normal; text-align: center; justify-content: center; width: max-content; max-width: calc(100% - 32px); line-height: 1.3; }
+@media (max-width: 479px) { .planos--unica .plano--premium { padding-top: var(--e6); } }
+.lista-check--oferta { gap: 10px; }
+.plano__avista { align-self: flex-end; margin: 0 0 0.6em 4px; font-size: 1rem; font-weight: 600; letter-spacing: 0; color: var(--nude-medio); }
+.plano__total { margin-top: 4px; font-size: 0.8125rem; line-height: 1.4; color: var(--nude-medio); opacity: 0.85; }
+
+/* Imagens: sem arrastar e sem o menu "salvar imagem" do toque longo (não impede captura de tela) */
+img, video { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
+/* A faixa café corta o círculo decorativo sem virar uma área que rola por dentro (ex.: ao navegar com Tab) */
+.secao--cafe { overflow: clip; }

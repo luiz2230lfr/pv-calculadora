@@ -65,14 +65,84 @@
     else window.addEventListener("load", iniciar, { once: true });
   });
 
-  // Depoimentos: setas (computador) andam um card para o lado no carrossel.
-  document.querySelectorAll("[data-depo]").forEach(function (seta) {
-    seta.addEventListener("click", function () {
-      var trilho = seta.parentNode.querySelector(".depoimentos");
-      var card = trilho.querySelector(".depoimento");
-      var passo = card ? card.getBoundingClientRect().width + 24 : 300;
-      trilho.scrollBy({ left: passo * Number(seta.getAttribute("data-depo")), behavior: reduzirMovimento ? "auto" : "smooth" });
-    });
+  // Depoimentos: setas, bolinhas e deslizar ficam sincronizados.
+  // Cada bolinha é uma posição possível (considera quantos cards aparecem por vez).
+  document.querySelectorAll(".depoimentos-carrossel").forEach(function (carrossel) {
+    var trilho = carrossel.querySelector(".depoimentos");
+    var cards = trilho.querySelectorAll(".depoimento");
+    var ant = carrossel.querySelector("[data-depo='-1']");
+    var prox = carrossel.querySelector("[data-depo='1']");
+    var bolinhas = carrossel.parentNode.querySelector(".depoimentos__bolinhas");
+    if (!cards.length) return;
+    var posicoes = 1;
+    var atual = 0;
+
+    function passo() {
+      return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : trilho.clientWidth;
+    }
+    function irPara(i) {
+      i = Math.max(0, Math.min(posicoes - 1, i));
+      trilho.scrollTo({ left: i * passo(), behavior: reduzirMovimento ? "auto" : "smooth" });
+    }
+    function marcar() {
+      var i = Math.max(0, Math.min(posicoes - 1, Math.round(trilho.scrollLeft / passo())));
+      if (trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 2) i = posicoes - 1;
+      atual = i;
+      ant.disabled = i === 0;
+      prox.disabled = i === posicoes - 1;
+      bolinhas.querySelectorAll("button").forEach(function (b, n) {
+        if (n === i) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
+      });
+    }
+    function montar() {
+      var porVez = Math.max(1, Math.round(trilho.clientWidth / passo()));
+      var total = Math.max(1, cards.length - porVez + 1);
+      if (total !== posicoes || !bolinhas.children.length) {
+        posicoes = total;
+        bolinhas.textContent = "";
+        for (var n = 0; n < posicoes; n++) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", "Ver depoimento " + (n + 1) + " de " + posicoes);
+          b.addEventListener("click", irPara.bind(null, n));
+          bolinhas.appendChild(b);
+        }
+      }
+      marcar();
+    }
+
+    ant.addEventListener("click", function () { irPara(atual - 1); });
+    prox.addEventListener("click", function () { irPara(atual + 1); });
+    var agendado = false;
+    trilho.addEventListener("scroll", function () {
+      if (agendado) return;
+      agendado = true;
+      requestAnimationFrame(function () { agendado = false; marcar(); });
+    }, { passive: true });
+    window.addEventListener("resize", montar);
+    montar();
+  });
+
+  // Imagens: sem menu de "salvar imagem" ao clicar com o botão direito ou segurar o dedo.
+  // Vale só para imagens e vídeo; textos, links e botões continuam normais.
+  document.addEventListener("contextmenu", function (e) {
+    if (e.target.closest && e.target.closest("img, video, .slot, .celular")) e.preventDefault();
+  });
+  document.addEventListener("dragstart", function (e) {
+    if (e.target.tagName === "IMG") e.preventDefault();
+  });
+
+  // Zoom limitado (pedido do Luiz): pinça, Ctrl/Cmd com + ou - e Ctrl com a roda do mouse.
+  // Alguns navegadores ignoram isso por acessibilidade. A rolagem normal e o deslizar do carrossel continuam.
+  document.addEventListener("gesturestart", function (e) { e.preventDefault(); });
+  document.addEventListener("touchmove", function (e) {
+    if (e.touches && e.touches.length > 1) e.preventDefault();
+  }, { passive: false });
+  document.addEventListener("wheel", function (e) {
+    if (e.ctrlKey) e.preventDefault();
+  }, { passive: false });
+  document.addEventListener("keydown", function (e) {
+    if ((e.ctrlKey || e.metaKey) && ["+", "-", "=", "_", "Add", "Subtract"].indexOf(e.key) !== -1) e.preventDefault();
   });
 
   // Animação leve de entrada das seções (desligada para quem prefere menos movimento).
