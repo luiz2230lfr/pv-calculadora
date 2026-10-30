@@ -4,6 +4,9 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v2.0.1 — 30/10/2026 (página A)
+- Checks do card da oferta no mesmo padrão dos outros checks da página (círculo dourado de 26 px). `estilos.css?v=2.0.1`. Cópia sem rastreio atualizada.
+
 ## v2.0.0 — 30/10/2026 (página A)
 - Oferta única de R$ 29,90: card e link de checkout do Plano Básico (R$ 14,90) removidos; card centralizado. Checkout da oferta de R$ 29,90 e rastreio iguais.
 - Card da oferta: título "Tudo o que será liberado para você hoje" → selo "APP COMPLETO + 5 BÔNUS + ACESSO VITALÍCIO" → nome do produto → mockup do pacote (`imagens/oferta/`) → 11 itens com check (app, recursos, 5 bônus, acesso vitalício, 30 dias de garantia) → "De R$ 147,00 por / R$ 29,90 à vista / ou 12x de R$ 3,09 / Total parcelado: R$ 37,08. Sem assinatura." → botão "QUERO O PACOTE COMPLETO" → "Pix ou cartão • 30 dias de garantia • Sem assinatura". Parcelamento conferido no checkout da Payt (1x R$ 29,90; 12x R$ 3,09).

@@ -834,3 +834,6 @@ s { text-decoration-thickness: 2px; }
 img, video { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
 /* A faixa café corta o círculo decorativo sem virar uma área que rola por dentro (ex.: ao navegar com Tab) */
 .secao--cafe { overflow: clip; }
+/* Checks do card da oferta no mesmo padrão dos checks da página (26px, dourado) */
+.plano--premium .lista-check--oferta li { align-items: flex-start; }
+.plano--premium .lista-check--oferta .icone { flex: none; width: 26px; height: 26px; padding: 5px; margin-top: -1px; }
