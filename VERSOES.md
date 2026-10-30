@@ -4,6 +4,9 @@ Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma vers�
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.
 
+## v2.0.2 — 30/10/2026 (página A)
+- Removida a linha "Total parcelado: R$ 37,08. Sem assinatura." do card; espaçamento do bloco de preço ajustado. `estilos.css?v=2.0.2`. Cópia sem rastreio atualizada.
+
 ## v2.0.1 — 30/10/2026 (página A)
 - Checks do card da oferta no mesmo padrão dos outros checks da página (círculo dourado de 26 px). `estilos.css?v=2.0.1`. Cópia sem rastreio atualizada.
 

@@ -837,3 +837,8 @@ img, video { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: 
 /* Checks do card da oferta no mesmo padrão dos checks da página (26px, dourado) */
 .plano--premium .lista-check--oferta li { align-items: flex-start; }
 .plano--premium .lista-check--oferta .icone { flex: none; width: 26px; height: 26px; padding: 5px; margin-top: -1px; }
+/* Bloco de preço sem a linha do total: respiro igual em cima e embaixo */
+.plano__precos { padding-top: var(--e4); margin-bottom: var(--e4); }
+.plano__precos .plano__preco { margin-top: var(--e1); }
+.plano__precos .plano__pagamento { margin-top: 10px; }
+.plano__garantias { margin-top: var(--e2); }
