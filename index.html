@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Calculadora de Precificação para Cabeleireiras</title>
   <meta name="description" content="Descubra quanto cobrar por cada serviço do seu salão em poucos minutos, sem fazer contas complicadas.">
   <meta name="theme-color" content="#F8F4EF">
@@ -17,7 +17,7 @@
   <link rel="preload" href="fontes/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="imagens/video/demonstracao-capa.webp" as="image" fetchpriority="high">
   <link rel="preconnect" href="https://cdn.utmify.com.br">
-  <link rel="stylesheet" href="estilos.css?v=2.0.3">
+  <link rel="stylesheet" href="estilos.css?v=1.8.1">
   <script>document.documentElement.classList.add("js");</script>
 
   <!-- Modo sem rastreio: abrir com ?semrastreio=1 no endereço NÃO carrega UTMify nem Clarity
@@ -60,8 +60,8 @@
   <header class="cabecalho">
     <div class="container cabecalho__interno">
       <a class="marca" href="#inicio" aria-label="Calculadora de Precificação para Cabeleireiras — início">
-        <img draggable="false" class="marca__simbolo" src="imagens/marca/simbolo.webp" alt="" width="90" height="104">
-        <img draggable="false" class="marca__nome" src="imagens/marca/nome.webp" alt="Calculadora de Precificação para Cabeleireiras" width="480" height="76">
+        <img class="marca__simbolo" src="imagens/marca/simbolo.webp" alt="" width="90" height="104" fetchpriority="high">
+        <img class="marca__nome" src="imagens/marca/nome.webp" alt="Calculadora de Precificação para Cabeleireiras" width="480" height="76" fetchpriority="high">
       </a>
     </div>
   </header>
@@ -74,13 +74,13 @@
         <div class="hero__texto" data-revelar>
           <h1 id="hero-titulo" class="hero__titulo">Seu salão dá lucro ou você paga para trabalhar?</h1>
           <p class="hero__descricao">Cobrar errado faz você perder dinheiro todos os dias sem perceber. Descubra quanto cobrar por cada serviço, em minutos e sem contas complicadas.</p>
-          <a class="botao botao--grande" href="#como-funciona">Ver como descobrir quanto cobrar <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          <a class="botao botao--grande" href="#planos">Quero descobrir quanto cobrar <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
           <p class="seguranca">
             <span><svg class="icone" aria-hidden="true"><use href="#i-raio"/></svg>Acesso imediato</span>
             <span class="seguranca__ponto" aria-hidden="true">•</span>
             <span><svg class="icone" aria-hidden="true"><use href="#i-cadeado"/></svg>Compra segura</span>
             <span class="seguranca__ponto" aria-hidden="true">•</span>
-            <span><svg class="icone" aria-hidden="true"><use href="#i-escudo"/></svg>Garantia de 30 dias</span>
+            <span><svg class="icone" aria-hidden="true"><use href="#i-escudo"/></svg>Garantia de até 30 dias</span>
           </p>
         </div>
 
@@ -167,6 +167,7 @@
 
         <div class="fecho" data-revelar>
           <p class="fecho__frase"><span>Sem fórmulas difíceis.</span> <span>Sem contas complicadas.</span> <strong>Tudo pelo celular.</strong></p>
+          <a class="botao" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
         </div>
       </div>
     </section>
@@ -185,34 +186,29 @@
         <div class="depoimentos-carrossel" data-revelar>
           <div class="depoimentos" tabindex="0" role="region" aria-label="Depoimentos autorizados">
           <figure class="depoimento">
-            <img draggable="false" class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-01-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-01-400.webp 400w, imagens/depoimentos/depoimento-autorizado-01-600.webp 600w, imagens/depoimentos/depoimento-autorizado-01-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp sobre o uso da calculadora para definir os preços." width="400" height="711" loading="lazy" decoding="async">
+            <img class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-01-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-01-400.webp 400w, imagens/depoimentos/depoimento-autorizado-01-600.webp 600w, imagens/depoimentos/depoimento-autorizado-01-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp sobre o uso da calculadora para definir os preços." width="400" height="711" loading="lazy" decoding="async">
           </figure>
           <figure class="depoimento">
-            <img draggable="false" class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-02-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-02-400.webp 400w, imagens/depoimentos/depoimento-autorizado-02-600.webp 600w, imagens/depoimentos/depoimento-autorizado-02-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Dois comentários no WhatsApp sobre a experiência com o aplicativo." width="400" height="606" loading="lazy" decoding="async">
+            <img class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-02-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-02-400.webp 400w, imagens/depoimentos/depoimento-autorizado-02-600.webp 600w, imagens/depoimentos/depoimento-autorizado-02-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Dois comentários no WhatsApp sobre a experiência com o aplicativo." width="400" height="606" loading="lazy" decoding="async">
           </figure>
           <figure class="depoimento">
-            <img draggable="false" class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-03-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-03-400.webp 400w, imagens/depoimentos/depoimento-autorizado-03-600.webp 600w, imagens/depoimentos/depoimento-autorizado-03-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Cliente comenta no WhatsApp que o aplicativo ajudou no negócio; telefone desfocado." width="400" height="711" loading="lazy" decoding="async">
+            <img class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-03-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-03-400.webp 400w, imagens/depoimentos/depoimento-autorizado-03-600.webp 600w, imagens/depoimentos/depoimento-autorizado-03-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Cliente comenta no WhatsApp que o aplicativo ajudou no negócio; telefone desfocado." width="400" height="711" loading="lazy" decoding="async">
           </figure>
           <figure class="depoimento">
-            <img draggable="false" class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-04-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-04-400.webp 400w, imagens/depoimentos/depoimento-autorizado-04-600.webp 600w, imagens/depoimentos/depoimento-autorizado-04-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes nas redes sociais sobre a calculadora e o suporte." width="400" height="546" loading="lazy" decoding="async">
+            <img class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-04-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-04-400.webp 400w, imagens/depoimentos/depoimento-autorizado-04-600.webp 600w, imagens/depoimentos/depoimento-autorizado-04-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes nas redes sociais sobre a calculadora e o suporte." width="400" height="546" loading="lazy" decoding="async">
           </figure>
           <figure class="depoimento">
-            <img draggable="false" class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-05-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-05-400.webp 400w, imagens/depoimentos/depoimento-autorizado-05-600.webp 600w, imagens/depoimentos/depoimento-autorizado-05-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre o uso da calculadora na precificação." width="400" height="521" loading="lazy" decoding="async">
+            <img class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-05-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-05-400.webp 400w, imagens/depoimentos/depoimento-autorizado-05-600.webp 600w, imagens/depoimentos/depoimento-autorizado-05-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre o uso da calculadora na precificação." width="400" height="521" loading="lazy" decoding="async">
           </figure>
           <figure class="depoimento">
-            <img draggable="false" class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-06-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-06-400.webp 400w, imagens/depoimentos/depoimento-autorizado-06-600.webp 600w, imagens/depoimentos/depoimento-autorizado-06-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre a experiência com o aplicativo." width="400" height="530" loading="lazy" decoding="async">
+            <img class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-06-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-06-400.webp 400w, imagens/depoimentos/depoimento-autorizado-06-600.webp 600w, imagens/depoimentos/depoimento-autorizado-06-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre a experiência com o aplicativo." width="400" height="530" loading="lazy" decoding="async">
           </figure>
           <figure class="depoimento">
-            <img draggable="false" class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-07-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-07-400.webp 400w, imagens/depoimentos/depoimento-autorizado-07-600.webp 600w, imagens/depoimentos/depoimento-autorizado-07-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp com demonstração do aplicativo; contato desfocado." width="400" height="710" loading="lazy" decoding="async">
+            <img class="depoimento__print" src="imagens/depoimentos/depoimento-autorizado-07-400.webp" srcset="imagens/depoimentos/depoimento-autorizado-07-400.webp 400w, imagens/depoimentos/depoimento-autorizado-07-600.webp 600w, imagens/depoimentos/depoimento-autorizado-07-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp com demonstração do aplicativo; contato desfocado." width="400" height="710" loading="lazy" decoding="async">
           </figure>
           </div>
           <button type="button" class="depoimentos__seta depoimentos__seta--ant" data-depo="-1" aria-label="Ver depoimento anterior"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
           <button type="button" class="depoimentos__seta depoimentos__seta--prox" data-depo="1" aria-label="Ver próximo depoimento"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-        </div>
-        <div class="depoimentos__bolinhas" role="group" aria-label="Escolher depoimento"></div>
-
-        <div class="depoimentos__acao">
-          <a class="botao botao--creme" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
         </div>
       </div>
     </section>
@@ -221,12 +217,12 @@
     <section class="secao secao--branca" id="bonus" aria-labelledby="bonus-titulo">
       <div class="container">
         <h2 id="bonus-titulo" class="titulo-secao titulo-secao--centro" data-revelar>Saiba quanto cobrar. E tenha mais segurança para defender seus preços!</h2>
-        <p class="subtitulo subtitulo--centro" data-revelar>Com sua calculadora, você recebe 5 bônus para organizar seus custos, comunicar reajustes e cuidar do relacionamento com suas clientes.</p>
+        <p class="subtitulo subtitulo--centro" data-revelar>Com o Plano Premium, você recebe 5 bônus exclusivos para organizar suas despesas, comunicar reajustes e cuidar do relacionamento com suas clientes.</p>
 
         <div class="bonus-grade">
           <article class="bonus" data-revelar>
             <div class="bonus__imagem">
-              <img draggable="false" src="imagens/bonus/bonus-01-800.webp" srcset="imagens/bonus/bonus-01-400.webp 400w, imagens/bonus/bonus-01-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup das 20 mensagens prontas para comunicar aumento de preços" width="800" height="600" loading="lazy" decoding="async">
+              <img src="imagens/bonus/bonus-01-800.webp" srcset="imagens/bonus/bonus-01-400.webp 400w, imagens/bonus/bonus-01-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup das 20 mensagens prontas para comunicar aumento de preços" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="bonus__corpo">
               <span class="etiqueta">BÔNUS 01</span>
@@ -234,14 +230,14 @@
               <p>Avise suas clientes sobre reajustes sem ficar insegura.</p>
               <div class="bonus__rodape">
                 <span class="bonus__valor">Valor estimado: R$ 37,00</span>
-                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
               </div>
             </div>
           </article>
 
           <article class="bonus" data-revelar>
             <div class="bonus__imagem">
-              <img draggable="false" src="imagens/bonus/bonus-02-800.webp?v=2" srcset="imagens/bonus/bonus-02-400.webp?v=2 400w, imagens/bonus/bonus-02-800.webp?v=2 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup das 20 respostas prontas para clientes que pedem desconto" width="800" height="600" loading="lazy" decoding="async">
+              <img src="imagens/bonus/bonus-02-800.webp?v=2" srcset="imagens/bonus/bonus-02-400.webp?v=2 400w, imagens/bonus/bonus-02-800.webp?v=2 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup das 20 respostas prontas para clientes que pedem desconto" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="bonus__corpo">
               <span class="etiqueta">BÔNUS 02</span>
@@ -249,14 +245,14 @@
               <p>Saiba o que responder quando a cliente pedir desconto, fiado ou disser que a colega cobra menos.</p>
               <div class="bonus__rodape">
                 <span class="bonus__valor">Valor estimado: R$ 27,00</span>
-                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
               </div>
             </div>
           </article>
 
           <article class="bonus" data-revelar>
             <div class="bonus__imagem">
-              <img draggable="false" src="imagens/bonus/bonus-03-800.webp?v=2" srcset="imagens/bonus/bonus-03-400.webp?v=2 400w, imagens/bonus/bonus-03-800.webp?v=2 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup do Kit Orçamento Profissional" width="800" height="600" loading="lazy" decoding="async">
+              <img src="imagens/bonus/bonus-03-800.webp?v=2" srcset="imagens/bonus/bonus-03-400.webp?v=2 400w, imagens/bonus/bonus-03-800.webp?v=2 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup do Kit Orçamento Profissional" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="bonus__corpo">
               <span class="etiqueta">BÔNUS 03</span>
@@ -264,14 +260,14 @@
               <p>Ficha de avaliação capilar, modelo de orçamento com o logo do seu salão, controle de propostas e catálogo de serviços editável no Canva.</p>
               <div class="bonus__rodape">
                 <span class="bonus__valor">Valor estimado: R$ 47,00</span>
-                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
               </div>
             </div>
           </article>
 
           <article class="bonus" data-revelar>
             <div class="bonus__imagem">
-              <img draggable="false" src="imagens/bonus/bonus-04-800.webp" srcset="imagens/bonus/bonus-04-400.webp 400w, imagens/bonus/bonus-04-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup da tabela de rendimento de produtos capilares" width="800" height="600" loading="lazy" decoding="async">
+              <img src="imagens/bonus/bonus-04-800.webp" srcset="imagens/bonus/bonus-04-400.webp 400w, imagens/bonus/bonus-04-800.webp 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup da tabela de rendimento de produtos capilares" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="bonus__corpo">
               <span class="etiqueta">BÔNUS 04</span>
@@ -279,14 +275,14 @@
               <p>Saiba quantos atendimentos você consegue fazer com cada produto.</p>
               <div class="bonus__rodape">
                 <span class="bonus__valor">Valor estimado: R$ 37,00</span>
-                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
               </div>
             </div>
           </article>
 
           <article class="bonus" data-revelar>
             <div class="bonus__imagem">
-              <img draggable="false" src="imagens/bonus/bonus-05-800.webp?v=2" srcset="imagens/bonus/bonus-05-400.webp?v=2 400w, imagens/bonus/bonus-05-800.webp?v=2 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup do Kit de Controle de Clientes" width="800" height="600" loading="lazy" decoding="async">
+              <img src="imagens/bonus/bonus-05-800.webp?v=2" srcset="imagens/bonus/bonus-05-400.webp?v=2 400w, imagens/bonus/bonus-05-800.webp?v=2 800w" sizes="(min-width: 1024px) 340px, (min-width: 640px) 46vw, 92vw" alt="Mockup do Kit de Controle de Clientes" width="800" height="600" loading="lazy" decoding="async">
             </div>
             <div class="bonus__corpo">
               <span class="etiqueta">BÔNUS 05</span>
@@ -294,7 +290,7 @@
               <p>Ficha da cliente com histórico químico, controle de retornos e 20 mensagens prontas para trazer de volta quem sumiu.</p>
               <div class="bonus__rodape">
                 <span class="bonus__valor">Valor estimado: R$ 47,00</span>
-                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO</span>
+                <span class="selo-incluido"><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>INCLUÍDO NO PREMIUM</span>
               </div>
             </div>
           </article>
@@ -304,7 +300,7 @@
           <span class="total-bonus__icone"><svg class="icone" aria-hidden="true"><use href="#i-presente"/></svg></span>
           <div>
             <p class="total-bonus__valor">Valor estimado dos 5 bônus: <strong>R$ 195,00</strong></p>
-            <p class="total-bonus__texto">Os 5 bônus acompanham sua calculadora, sem custo adicional.</p>
+            <p class="total-bonus__texto">Todos os bônus estão incluídos no Plano Premium, sem custo adicional.</p>
           </div>
         </div>
       </div>
@@ -313,35 +309,50 @@
     <!-- DOBRA 6 | OFERTA -->
     <section class="secao secao--nude" id="planos" aria-labelledby="planos-titulo">
       <div class="container">
-        <h2 id="planos-titulo" class="titulo-secao titulo-secao--centro" data-revelar>Tudo o que será liberado para você hoje</h2>
+        <h2 id="planos-titulo" class="titulo-secao titulo-secao--centro" data-revelar>Pare de cobrar no achismo. Escolha sua calculadora!</h2>
 
-        <div class="planos planos--unica">
-          <article class="plano plano--premium" aria-labelledby="plano-oferta" data-revelar>
-            <span class="plano__selo plano__selo--quebra"><svg class="icone" aria-hidden="true"><use href="#i-coroa"/></svg>APP COMPLETO + 5 BÔNUS + ACESSO VITALÍCIO</span>
-            <h3 id="plano-oferta" class="plano__nome plano__nome--produto">Calculadora de Precificação para Cabeleireiras</h3>
-            <img draggable="false" class="plano__mockup" src="imagens/oferta/mockup-plano-premium-400.webp" srcset="imagens/oferta/mockup-plano-premium-400.webp 400w, imagens/oferta/mockup-plano-premium-800.webp 800w" sizes="(min-width: 640px) 380px, 80vw" alt="Aplicativo da Calculadora com os cinco bônus incluídos no pacote" width="800" height="600" loading="lazy" decoding="async">
-            <div class="plano__beneficios">
-            <ul class="lista-check lista-check--oferta">
+        <div class="planos">
+          <article class="plano" aria-labelledby="plano-basico" data-revelar>
+            <h3 id="plano-basico" class="plano__nome">PLANO BÁSICO</h3>
+            <p class="plano__de">De <s>R$ 67,00</s></p>
+            <p class="plano__preco"><span class="plano__moeda">R$</span> <span class="plano__valor">14,90</span></p>
+            <p class="plano__pagamento">Pagamento único</p>
+            <ul class="lista-check">
               <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Aplicativo completo de precificação para cabeleireiras</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Calcule sua hora, cada serviço e sua tabela de preços</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Compare com o que cobra hoje e recalcule quando os custos mudarem</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Guia de preenchimento e suporte no WhatsApp</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>20 mensagens prontas para comunicar aumento de preços</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>20 respostas prontas para clientes que pedem desconto</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Kit Orçamento Profissional</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Acesso pelo celular</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Guia visual de preenchimento</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Suporte pelo WhatsApp</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Garantia de 7 dias</li>
+            </ul>
+            <a class="botao botao--bloco botao--contorno" href="#planos" data-checkout="basico">Quero o Plano Básico</a>
+          </article>
+
+          <article class="plano plano--premium" aria-labelledby="plano-premium" data-revelar>
+            <span class="plano__selo"><svg class="icone" aria-hidden="true"><use href="#i-coroa"/></svg>MAIS COMPLETO</span>
+            <h3 id="plano-premium" class="plano__nome">PLANO PREMIUM</h3>
+            <p class="plano__de">De <s>R$ 147,00</s></p>
+            <p class="plano__preco"><span class="plano__moeda">R$</span> <span class="plano__valor">29,90</span></p>
+            <p class="plano__pagamento">Pagamento único</p>
+            <div class="plano__beneficios">
+            <ul class="lista-check">
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Aplicativo completo de precificação para cabeleireiras</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Acesso pelo celular</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Guia visual de preenchimento</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Suporte pelo WhatsApp</li>
+            </ul>
+            <p class="plano__subtitulo">Você também recebe 5 bônus exclusivos:</p>
+            <ul class="lista-check lista-check--bonus">
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>20 mensagens para comunicar aumento de preços</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>20 respostas para pedidos de desconto</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Kit Orçamento Profissional (ficha de avaliação, orçamento e catálogo no Canva)</li>
               <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Tabela de rendimento de produtos capilares</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Kit de Controle de Clientes</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Acesso vitalício</li>
-              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>30 dias de garantia</li>
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Kit de Controle de Clientes (histórico químico, retornos e 20 mensagens)</li>
+            </ul>
+            <ul class="lista-check lista-check--garantia">
+              <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg><strong>Garantia estendida de 30 dias</strong></li>
             </ul>
             </div>
-            <div class="plano__precos">
-              <p class="plano__de">De <s>R$&nbsp;147,00</s> por</p>
-              <p class="plano__preco"><span class="plano__moeda">R$</span> <span class="plano__valor">29,90</span> <span class="plano__avista">à vista</span></p>
-              <p class="plano__pagamento">ou 12x de R$&nbsp;3,09</p>
-            </div>
-            <a class="botao botao--bloco botao--dourado" href="#planos" data-checkout="premium">QUERO O PACOTE COMPLETO</a>
-            <p class="plano__garantias"><span>Pix ou cartão</span> • <span>30 dias de garantia</span> • <span>Sem assinatura</span></p>
+            <a class="botao botao--bloco botao--dourado" href="#planos" data-checkout="premium">Quero o Premium com todos os bônus</a>
           </article>
         </div>
       </div>
@@ -360,10 +371,11 @@
         </div>
         <div class="garantia__texto">
           <h2 id="garantia-titulo" class="titulo-secao">Teste sua calculadora sem correr riscos!</h2>
-          <ul class="prazos prazos--unico">
-            <li class="prazo prazo--premium"><strong>30 dias de garantia</strong></li>
+          <ul class="prazos">
+            <li class="prazo"><span class="prazo__plano">Plano Básico:</span> <strong>7 dias de garantia</strong></li>
+            <li class="prazo prazo--premium"><span class="prazo__plano">Plano Premium:</span> <strong>30 dias de garantia</strong></li>
           </ul>
-          <p>Use sua calculadora com tranquilidade. Se achar que ela não é para você, basta pedir o reembolso em até 30 dias após a compra.</p>
+          <p>Use sua calculadora com tranquilidade. Se achar que ela não é para você, basta pedir o reembolso dentro do prazo de garantia do seu plano.</p>
           <p class="garantia__destaque">Devolvemos <mark>100% do valor pago</mark>.</p>
           <p class="garantia__fim">Sem perguntas. Sem burocracia.</p>
         </div>
@@ -391,12 +403,12 @@
             <div class="faq__resposta"><p>O acesso é liberado após a confirmação do pagamento. Tudo é feito pela internet.</p></div>
           </details>
           <details class="faq__item" data-revelar>
-            <summary>5. O que está incluído nos R$ 29,90?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-            <div class="faq__resposta"><p>Você recebe a calculadora completa de precificação, acesso pelo celular, guia visual de preenchimento, suporte pelo WhatsApp e os 5 bônus apresentados nesta página, com acesso vitalício. O pagamento é único, sem assinatura, e sua compra tem garantia de 30 dias.</p></div>
+            <summary>5. Qual é a diferença entre o Básico e o Premium?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <div class="faq__resposta"><p>O Básico inclui a calculadora com todos os recursos e suporte pelo WhatsApp. O Premium oferece tudo isso, mais os 5 bônus e garantia de 30 dias.</p></div>
           </details>
           <details class="faq__item" data-revelar>
             <summary>6. E se eu tiver dúvidas ou não gostar?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-            <div class="faq__resposta"><p>Você pode chamar nosso suporte pelo WhatsApp. Se não ficar satisfeita, basta pedir o reembolso em até 30 dias após a compra.</p></div>
+            <div class="faq__resposta"><p>Você pode chamar nosso suporte pelo WhatsApp. Se não ficar satisfeita, basta pedir o reembolso dentro do prazo de garantia: 7 dias no Básico ou 30 dias no Premium.</p></div>
           </details>
           <details class="faq__item" data-revelar>
             <summary>7. Posso usar a calculadora mesmo atendendo em casa ou trabalhando sozinha?<svg class="icone faq__seta" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
@@ -410,11 +422,11 @@
 
   <footer class="rodape">
     <div class="container rodape__interno">
-      <img draggable="false" class="rodape__logo" src="imagens/marca/logo-completa.webp" alt="Calculadora de Precificação para Cabeleireiras" width="440" height="276" loading="lazy" decoding="async">
+      <img class="rodape__logo" src="imagens/marca/logo-completa.webp" alt="Calculadora de Precificação para Cabeleireiras" width="440" height="276" loading="lazy" decoding="async">
     </div>
   </footer>
 
   <script src="config.js"></script>
-  <script src="script.js?v=2.0.3"></script>
+  <script src="script.js?v=1.9.0"></script>
 </body>
 </html>

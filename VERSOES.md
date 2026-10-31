@@ -1,5 +1,15 @@
 # Histórico de versões da página de vendas
 
+## Recuperação seletiva — 31/10/2026 (prévia, não publicada)
+- Base: última versão local registrada em 29/10/2026, v1.9.0, commit a1c1acc.
+- Recuperados visual, textos, dois planos, preços e fluxo de compra daquela data.
+- Os cinco bônus já eram os atuais: nomes e imagens foram conferidos com a versão de 30/10; mantidos.
+- Rastreamentos, parâmetros semrastreio e links de checkout do histórico preservados.
+- Histórico posterior preservado; esta recuperação é um novo commit sobre a versão de 30/10.
+- Cópias de revisão sem rastreadores e com compra bloqueada geradas separadamente.
+- Nenhum push ou publicação realizado; originais da Área de Trabalho preservados.
+
+
 Cada versão aprovada recebe um número (tag no GitHub). Para voltar a uma versão anterior,
 basta pedir ao Claude: "volte a página para a versão X". Nada é apagado — a volta vira uma
 nova versão, e dá para desfazer depois.

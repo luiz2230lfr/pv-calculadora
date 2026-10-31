@@ -48,7 +48,7 @@
 
   var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Vídeo de demonstração: só começa a baixar um pouco depois de a página carregar (a capa aparece antes),
+  // Vídeo de demonstração: só começa a baixar depois que a página carregou (a capa aparece antes),
   // toca quando está visível e pausa fora da tela. Quem prefere menos movimento vê só a capa.
   document.querySelectorAll(".video-demo").forEach(function (video) {
     if (reduzirMovimento) return;
@@ -61,91 +61,18 @@
         });
       }, { threshold: 0.25 }).observe(video);
     }
-    function iniciarDepois() { setTimeout(iniciar, 2500); }
-    if (document.readyState === "complete") iniciarDepois();
-    else window.addEventListener("load", iniciarDepois, { once: true });
+    if (document.readyState === "complete") iniciar();
+    else window.addEventListener("load", iniciar, { once: true });
   });
 
-  // Card da oferta: a animação só roda enquanto o card está na tela.
-  document.querySelectorAll(".plano--premium").forEach(function (card) {
-    if (!("IntersectionObserver" in window)) { card.classList.add("plano--visivel"); return; }
-    new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (e) { card.classList.toggle("plano--visivel", e.isIntersecting); });
-    }).observe(card);
-  });
-
-  // Depoimentos: setas, bolinhas e deslizar ficam sincronizados.
-  // Cada bolinha é uma posição possível (considera quantos cards aparecem por vez).
-  document.querySelectorAll(".depoimentos-carrossel").forEach(function (carrossel) {
-    var trilho = carrossel.querySelector(".depoimentos");
-    var cards = trilho.querySelectorAll(".depoimento");
-    var ant = carrossel.querySelector("[data-depo='-1']");
-    var prox = carrossel.querySelector("[data-depo='1']");
-    var bolinhas = carrossel.parentNode.querySelector(".depoimentos__bolinhas");
-    if (!cards.length) return;
-    var posicoes = 1;
-    var atual = 0;
-
-    function passo() {
-      return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : trilho.clientWidth;
-    }
-    function irPara(i) {
-      i = Math.max(0, Math.min(posicoes - 1, i));
-      trilho.scrollTo({ left: i * passo(), behavior: reduzirMovimento ? "auto" : "smooth" });
-    }
-    function marcar() {
-      var i = Math.max(0, Math.min(posicoes - 1, Math.round(trilho.scrollLeft / passo())));
-      if (trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 2) i = posicoes - 1;
-      atual = i;
-      ant.disabled = i === 0;
-      prox.disabled = i === posicoes - 1;
-      bolinhas.querySelectorAll("button").forEach(function (b, n) {
-        if (n === i) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
-      });
-    }
-    function montar() {
-      var porVez = Math.max(1, Math.round(trilho.clientWidth / passo()));
-      var total = Math.max(1, cards.length - porVez + 1);
-      if (total !== posicoes || !bolinhas.children.length) {
-        posicoes = total;
-        bolinhas.textContent = "";
-        for (var n = 0; n < posicoes; n++) {
-          var b = document.createElement("button");
-          b.type = "button";
-          b.setAttribute("aria-label", "Ver depoimento " + (n + 1) + " de " + posicoes);
-          b.addEventListener("click", irPara.bind(null, n));
-          bolinhas.appendChild(b);
-        }
-      }
-      marcar();
-    }
-
-    ant.addEventListener("click", function () { irPara(atual - 1); });
-    prox.addEventListener("click", function () { irPara(atual + 1); });
-    var agendado = false;
-    trilho.addEventListener("scroll", function () {
-      if (agendado) return;
-      agendado = true;
-      requestAnimationFrame(function () { agendado = false; marcar(); });
-    }, { passive: true });
-    window.addEventListener("resize", montar);
-    montar();
-  });
-
-  // Imagens: sem menu de "salvar imagem" ao clicar com o botão direito ou segurar o dedo.
-  // Vale só para imagens e vídeo; textos, links e botões continuam normais.
-  document.addEventListener("contextmenu", function (e) {
-    if (e.target.closest && e.target.closest("img, video, .slot, .celular")) e.preventDefault();
-  });
-  document.addEventListener("dragstart", function (e) {
-    if (e.target.tagName === "IMG") e.preventDefault();
-  });
-
-  // Zoom limitado (pedido do Luiz): a configuração da página (viewport) mais o gesto no iPhone e Ctrl/Cmd com + ou -.
-  // Sem vigiar cada toque ou movimento da roda, para a página reagir mais rápido. Alguns navegadores ignoram o limite.
-  document.addEventListener("gesturestart", function (e) { e.preventDefault(); });
-  document.addEventListener("keydown", function (e) {
-    if ((e.ctrlKey || e.metaKey) && ["+", "-", "=", "_", "Add", "Subtract"].indexOf(e.key) !== -1) e.preventDefault();
+  // Depoimentos: setas (computador) andam um card para o lado no carrossel.
+  document.querySelectorAll("[data-depo]").forEach(function (seta) {
+    seta.addEventListener("click", function () {
+      var trilho = seta.parentNode.querySelector(".depoimentos");
+      var card = trilho.querySelector(".depoimento");
+      var passo = card ? card.getBoundingClientRect().width + 24 : 300;
+      trilho.scrollBy({ left: passo * Number(seta.getAttribute("data-depo")), behavior: reduzirMovimento ? "auto" : "smooth" });
+    });
   });
 
   // Animação leve de entrada das seções (desligada para quem prefere menos movimento).
