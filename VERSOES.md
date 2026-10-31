@@ -91,3 +91,7 @@ Primeira versão completa da página de vendas.
 - Seção de depoimentos oculta até haver depoimentos reais autorizados.
 - Links de checkout ainda vazios (config.js).
 - Página otimizada: abre com ~166 KB.
+
+## Publicação autorizada — 31/10/2026
+- Luiz aprovou a publicação das cópias recuperadas.
+- Configuração estática da Vercel conferida; arquivos internos excluídos da hospedagem.
