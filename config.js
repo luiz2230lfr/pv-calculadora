@@ -8,7 +8,7 @@
   levando para a seção de planos e um aviso aparece no console do navegador.
 */
 window.CONFIG = {
-  CHECKOUT_PREMIUM_URL: "https://checkout.payt.com.br/45cb486a10c189d465741dad3e5bf794",  // Oferta única: calculadora + 5 bônus (R$ 37,90)
+  CHECKOUT_PREMIUM_URL: "https://payfast.greenn.com.br/redirect/813490",  // Oferta única na Greenn (R$ 37,90)
 
   // Microsoft Clarity (mapas de calor e gravações). Deixe "" para desligar.
   CLARITY_ID: "yy85gv6bpr",

@@ -1,5 +1,11 @@
 # Histórico de versões da página de vendas
 
+## v2.2.0 — 03/11/2026 (página A)
+- Checkout trocado para a Greenn: https://payfast.greenn.com.br/redirect/813490 (R$ 37,90; o rastreador novo reconhece a Greenn e marca o link com sck/xcod + UTMs). Linha de parcelas: "à vista ou em até 12x no cartão" (a Greenn só mostra o valor da parcela no passo de pagamento; tarifa informada 3,39% a.m.).
+- Garantia de 7 dias em toda a página (topo, card, linha abaixo do botão, seção de garantia, FAQ 5 e 6).
+- Topo sem vídeo: o celular mostra a imagem fixa da tela inicial (o vídeo não é mais baixado).
+- Página estática: sem animações de entrada, sem transições e sem movimento ao passar o mouse. Só o card da oferta continua pulsando.
+
 ## v2.1.1 — 02/11/2026 (página A)
 - Só velocidade na abertura (connect rate), sem mudar visual, textos ou rastreamento: os 7 depoimentos só começam a baixar quando a seção chega perto da tela (antes baixavam junto com o topo, ~300 KB); logos sem prioridade alta (a capa do vídeo fica com a prioridade); vídeo do topo começa 2 s depois de a página carregar. Cópia sem rastreio atualizada.
 

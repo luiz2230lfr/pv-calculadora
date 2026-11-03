@@ -771,3 +771,11 @@ s { text-decoration-thickness: 2px; }
 /* Linha discreta abaixo do botão de compra */
 .plano__garantias { margin-top: var(--e2); text-align: center; font-size: 0.8125rem; line-height: 1.5; color: var(--nude-medio); }
 .plano__garantias span { white-space: nowrap; }
+
+/* Página estática (pedido do Luiz, 03/11/2026): sem animações de entrada, sem movimento ao passar o mouse
+   e sem transições. Só o card da oferta continua pulsando. */
+*, *::before, *::after { transition: none !important; }
+.botao:hover, .botao:active, .botao:hover .icone { transform: none; }
+.passo:hover .passo__cartao, .depoimento:hover, .bonus:hover { translate: none; }
+.bonus:hover .bonus__imagem > img { transform: none; }
+.js [data-revelar] { opacity: 1; transform: none; }

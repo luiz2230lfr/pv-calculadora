@@ -50,7 +50,7 @@
 
   // Vídeo de demonstração: só começa a baixar 2 s depois de a página carregar (a capa aparece antes),
   // toca quando está visível e pausa fora da tela. Quem prefere menos movimento vê só a capa.
-  document.querySelectorAll(".video-demo").forEach(function (video) {
+  document.querySelectorAll("video.video-demo").forEach(function (video) {
     if (reduzirMovimento) return;
     function iniciar() {
       if (!("IntersectionObserver" in window)) { video.play().catch(function () {}); return; }
