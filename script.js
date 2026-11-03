@@ -48,7 +48,7 @@
 
   var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Vídeo de demonstração: só começa a baixar depois que a página carregou (a capa aparece antes),
+  // Vídeo de demonstração: só começa a baixar 2 s depois de a página carregar (a capa aparece antes),
   // toca quando está visível e pausa fora da tela. Quem prefere menos movimento vê só a capa.
   document.querySelectorAll(".video-demo").forEach(function (video) {
     if (reduzirMovimento) return;
@@ -61,8 +61,27 @@
         });
       }, { threshold: 0.25 }).observe(video);
     }
-    if (document.readyState === "complete") iniciar();
-    else window.addEventListener("load", iniciar, { once: true });
+    function iniciarDepois() { setTimeout(iniciar, 2000); }
+    if (document.readyState === "complete") iniciarDepois();
+    else window.addEventListener("load", iniciarDepois, { once: true });
+  });
+
+  // Depoimentos: as imagens só começam a baixar quando a seção está chegando perto da tela
+  // (não disputam internet com o topo da página).
+  document.querySelectorAll("#depoimentos").forEach(function (secao) {
+    function carregar() {
+      secao.querySelectorAll("img[data-src]").forEach(function (img) {
+        if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+        img.removeAttribute("data-srcset");
+      });
+    }
+    if (!("IntersectionObserver" in window)) { carregar(); return; }
+    var obs = new IntersectionObserver(function (entradas) {
+      if (entradas.some(function (e) { return e.isIntersecting; })) { obs.disconnect(); carregar(); }
+    }, { rootMargin: "900px 0px" });
+    obs.observe(secao);
   });
 
   // Depoimentos: setas (computador) andam um card para o lado no carrossel.

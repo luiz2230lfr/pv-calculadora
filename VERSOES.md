@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v2.1.1 — 02/11/2026 (página A)
+- Só velocidade na abertura (connect rate), sem mudar visual, textos ou rastreamento: os 7 depoimentos só começam a baixar quando a seção chega perto da tela (antes baixavam junto com o topo, ~300 KB); logos sem prioridade alta (a capa do vídeo fica com a prioridade); vídeo do topo começa 2 s depois de a página carregar. Cópia sem rastreio atualizada.
+
 ## v2.1.0 — 02/11/2026 (página A)
 - Base: a versão recuperada de 29/10 (a que estava no ar). Agora é PLANO ÚNICO de R$ 37,90 (mesmo link da Payt, que já cobra R$ 37,90; conferido: 1x R$ 37,90 ou 12x R$ 3,92). Card e link do Plano Básico removidos; card centralizado ("CALCULADORA COMPLETA + 5 BÔNUS", selo "5 BÔNUS INCLUÍDOS", "De R$ 147,00 / R$ 37,90 / à vista ou 12x de R$ 3,92", botão "Quero minha calculadora com os 5 bônus", linha "Pagamento único • Acesso imediato • Garantia de 30 dias"). Título da oferta "Tudo o que será liberado para você hoje".
 - Textos sem dois planos: bônus "INCLUÍDO" e nova introdução/fechamento; garantia única de 30 dias (topo, oferta, seção de garantia); FAQ 5 "O que está incluído nos R$ 37,90?"; FAQ 6 sem Básico/Premium.
