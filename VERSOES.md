@@ -1,5 +1,11 @@
 # Histórico de versões da página de vendas
 
+## v2.1.0 — 02/11/2026 (página A)
+- Base: a versão recuperada de 29/10 (a que estava no ar). Agora é PLANO ÚNICO de R$ 37,90 (mesmo link da Payt, que já cobra R$ 37,90; conferido: 1x R$ 37,90 ou 12x R$ 3,92). Card e link do Plano Básico removidos; card centralizado ("CALCULADORA COMPLETA + 5 BÔNUS", selo "5 BÔNUS INCLUÍDOS", "De R$ 147,00 / R$ 37,90 / à vista ou 12x de R$ 3,92", botão "Quero minha calculadora com os 5 bônus", linha "Pagamento único • Acesso imediato • Garantia de 30 dias"). Título da oferta "Tudo o que será liberado para você hoje".
+- Textos sem dois planos: bônus "INCLUÍDO" e nova introdução/fechamento; garantia única de 30 dias (topo, oferta, seção de garantia); FAQ 5 "O que está incluído nos R$ 37,90?"; FAQ 6 sem Básico/Premium.
+- Rastreamento: UTMify (pixel e UTMs) removida por completo. Fica só o Clarity e o rastreador de vendas novo (cashflow.mentoriaprocesso.com/t/p.js, com os mesmos atributos fornecidos), no head. O rastreador respeita `?semrastreio=1`. Conferido: ele marca o link da Payt com o código da visita (sck/xcod) e as UTMs.
+- `ferramentas/gerar-copia-sem-rastreio.py` e LEIA-ME atualizados para o rastreador novo. Cópia sem rastreio atualizada.
+
 ## Recuperação seletiva — 31/10/2026 (prévia, não publicada)
 - Base: última versão local registrada em 29/10/2026, v1.9.0, commit a1c1acc.
 - Recuperados visual, textos, dois planos, preços e fluxo de compra daquela data.

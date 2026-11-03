@@ -762,3 +762,12 @@ s { text-decoration-thickness: 2px; }
   .depoimentos__seta--prox .icone { transform: rotate(-90deg); }
 }
 @media (max-width: 767px) { .depoimentos-carrossel { margin-top: var(--e5); } }
+
+/* Oferta única: um card centralizado e a garantia em um só bloco */
+.planos--unica { max-width: 560px; }
+@media (min-width: 900px) { .planos--unica { grid-template-columns: 1fr; } }
+.prazos--unico { grid-template-columns: 1fr; max-width: 420px; }
+@media (max-width: 899px) { .prazos--unico { margin-inline: auto; } }
+/* Linha discreta abaixo do botão de compra */
+.plano__garantias { margin-top: var(--e2); text-align: center; font-size: 0.8125rem; line-height: 1.5; color: var(--nude-medio); }
+.plano__garantias span { white-space: nowrap; }

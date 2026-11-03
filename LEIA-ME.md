@@ -25,7 +25,7 @@ Não publicar as pastas `.claude/` e `materiais-novos/`.
 No Claude, peça para abrir a visualização da página (http://localhost:4321).
 
 ## Ver sem rastreio (não conta visita)
-- **Online:** `https://pv-calculadora.vercel.app/?semrastreio=1`, a mesma página, sem UTMify (pixel e UTMs) e sem Clarity, com o aviso "Modo sem rastreio" no canto. Acompanha sozinho cada versão nova.
+- **Online:** `https://pv-calculadora.vercel.app/?semrastreio=1`, a mesma página, sem o rastreador de vendas e sem Clarity, com o aviso "Modo sem rastreio" no canto. Acompanha sozinho cada versão nova.
 - **No computador:** pasta irmã `2 - Página de Vendas - Visualizar sem rastreio`, com dois cliques no `index.html`.
 - **REGRA:** toda vez que uma versão nova da página A for publicada, refazer a cópia do computador com
   `python ferramentas/gerar-copia-sem-rastreio.py` e anotar no VERSOES.md "cópia sem rastreio atualizada".

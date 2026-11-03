@@ -1,4 +1,4 @@
-"""Refaz a cópia da página A SEM rastreio (não conta visita na UTMify nem no Clarity).
+"""Refaz a cópia da página A SEM rastreio (não conta visita no rastreador de vendas nem no Clarity).
 
 Rodar depois de cada versão publicada da página A:
     python ferramentas/gerar-copia-sem-rastreio.py
@@ -33,19 +33,19 @@ def main():
     for pasta in PASTAS:
         shutil.copytree(ORIGEM / pasta, DESTINO / pasta, dirs_exist_ok=True)
 
-    # index.html: liga o modo sem rastreio, tira os scripts da UTMify e o que depende da internet
+    # index.html: liga o modo sem rastreio, tira o rastreador de vendas e o que depende da internet
     html = (DESTINO / "index.html").read_text(encoding="utf-8")
     html, n = re.subn(r"window\.SEM_RASTREIO = .*?;</script>", "window.SEM_RASTREIO = true;</script>", html, count=1)
     if n != 1:
         raise SystemExit("Não encontrei a linha do modo sem rastreio no index.html.")
-    html, n = re.subn(r"\n  <script>[^\n]*atob\([^\n]*</script>\n", "\n", html)
-    if n != 2:
-        raise SystemExit(f"Esperava 2 scripts da UTMify e achei {n}. Confira o index.html.")
-    html = re.sub(r"  <link rel=\"preconnect\" href=\"https://cdn\.utmify\.com\.br\">\n", "", html)
+    html, n = re.subn(r"\n  <!-- Rastreador de vendas.*?</script>\n", "\n", html, flags=re.S)
+    if n != 1:
+        raise SystemExit(f"Esperava 1 bloco do rastreador de vendas e achei {n}. Confira o index.html.")
+    html = re.sub(r"  <link rel=\"preconnect\" href=\"https://[^\"]+\">\n", "", html)
     html = re.sub(r"  <link rel=\"preload\" href=\"fontes/[^\"]+\" as=\"font\"[^>]*>\n", "", html)
     html = html.replace("<head>", "<head>\n  <!-- CÓPIA SEM RASTREIO gerada por ferramentas/gerar-copia-sem-rastreio.py -->", 1)
-    if "atob(" in html or "utmify.com.br/scripts" in html:
-        raise SystemExit("Ainda sobrou código da UTMify na cópia. Nada foi garantido.")
+    if "cashflow." in html or "atob(" in html or "utmify" in html.lower():
+        raise SystemExit("Ainda sobrou código de rastreamento na cópia. Nada foi garantido.")
     (DESTINO / "index.html").write_text(html, encoding="utf-8", newline="")
 
     # config.js: Clarity desligado
@@ -66,7 +66,7 @@ def main():
     (DESTINO / "LEIA-ME - como abrir.txt").write_text(
         "CÓPIA DA PÁGINA A SEM RASTREIO\n"
         "Para abrir: dê dois cliques em index.html.\n"
-        "Esta cópia NÃO tem o pixel da UTMify nem o Microsoft Clarity, então não conta visita.\n"
+        "Esta cópia NÃO tem o rastreador de vendas nem o Microsoft Clarity, então não conta visita.\n"
         "Atenção: os botões de compra continuam levando ao checkout da Payt de verdade. Não preencha dados lá.\n"
         f"Gerada em {date.today():%d/%m/%Y} a partir da página publicada. Online: https://pv-calculadora.vercel.app/?semrastreio=1\n",
         encoding="utf-8",
