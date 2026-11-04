@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v3.0.3 — 04/11/2026 (página A)
+- Carrossel das telas do app sem a tela inicial (ela já aparece no celular do topo): quem clica em "Ver o app por dentro" cai direto em telas novas (valor da hora, somar gastos, calculadora, frasco, selo Ajustar, tabela). Cópia sem rastreio atualizada.
+
 ## v3.0.2 — 04/11/2026 (página A)
 - Topo sem os 3 balões em volta do celular (repetiam os checks e cobriam a tela do app). "Suporte no WhatsApp" foi para a linha de confiança. Celular um pouco maior. Cópia sem rastreio atualizada.
 
