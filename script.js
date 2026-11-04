@@ -84,6 +84,16 @@
     obs.observe(secao);
   });
 
+  // Carrossel das telas do app: setas (computador) andam uma tela para o lado.
+  document.querySelectorAll("[data-carrossel] [data-passo]").forEach(function (seta) {
+    seta.addEventListener("click", function () {
+      var trilho = seta.parentNode.querySelector(".carrossel__trilho");
+      var item = trilho.firstElementChild;
+      var passo = item ? item.getBoundingClientRect().width + 24 : 260;
+      trilho.scrollBy({ left: passo * Number(seta.getAttribute("data-passo")), behavior: reduzirMovimento ? "auto" : "smooth" });
+    });
+  });
+
   // Depoimentos: setas (computador) andam um card para o lado no carrossel.
   document.querySelectorAll("[data-depo]").forEach(function (seta) {
     seta.addEventListener("click", function () {

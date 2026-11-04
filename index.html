@@ -15,9 +15,9 @@
   <link rel="icon" type="image/png" sizes="48x48" href="imagens/marca/icone-48.png">
   <link rel="apple-touch-icon" href="imagens/marca/icone-180.png">
   <link rel="preload" href="fontes/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="imagens/video/demonstracao-capa.webp" as="image" fetchpriority="high">
+  <link rel="preload" as="image" href="imagens/app/app-01-inicio-800.webp" imagesrcset="imagens/app/app-01-inicio-400.webp 400w, imagens/app/app-01-inicio-800.webp 800w" imagesizes="(min-width: 1024px) 300px, 62vw" fetchpriority="high">
   <link rel="preconnect" href="https://cashflow.mentoriaprocesso.com">
-  <link rel="stylesheet" href="estilos.css?v=2.2.0">
+  <link rel="stylesheet" href="estilos.css?v=3.0.0">
   <script>document.documentElement.classList.add("js");</script>
 
   <!-- Modo sem rastreio: abrir com ?semrastreio=1 no endereço NÃO carrega o rastreador nem o Clarity
@@ -48,6 +48,7 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
       <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
       <symbol id="i-calculadora" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
       <symbol id="i-tesoura" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
       <symbol id="i-recibo" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></symbol>
@@ -85,9 +86,15 @@
     <section class="hero" id="inicio" aria-labelledby="hero-titulo">
       <div class="container hero__grade">
         <div class="hero__texto">
+          <p class="hero__selo">CALCULADORA DE PRECIFICAÇÃO PARA CABELEIREIRAS</p>
           <h1 id="hero-titulo" class="hero__titulo">Seu salão dá lucro ou você paga para trabalhar?</h1>
           <p class="hero__descricao">Cobrar errado faz você perder dinheiro todos os dias sem perceber. Descubra quanto cobrar por cada serviço, em minutos e sem contas complicadas.</p>
-          <a class="botao botao--grande" href="#planos">Quero descobrir quanto cobrar <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          <ul class="hero__bullets">
+            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Descubra o preço certo de cada serviço direto no celular, sem planilha e sem fazer conta.</li>
+            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Você informa os gastos do mês e o tempo de cada atendimento; o app calcula o valor da sua hora e o preço de cada serviço.</li>
+            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Veja, serviço por serviço, se o que você cobra hoje está certo ou quanto está deixando de fora por mês.</li>
+          </ul>
+          <a class="botao botao--grande" href="#previas">Ver o app por dentro <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
           <p class="seguranca">
             <span><svg class="icone" aria-hidden="true"><use href="#i-raio"/></svg>Acesso imediato</span>
             <span class="seguranca__ponto" aria-hidden="true">•</span>
@@ -101,7 +108,7 @@
           <div class="hero__circulo" aria-hidden="true"></div>
           <div class="celular celular--hero">
             <div class="celular__tela celular__tela--video">
-              <img class="video-demo" src="imagens/video/demonstracao-capa.webp" alt="Tela inicial do aplicativo da Calculadora de Precificação" width="480" height="1038" fetchpriority="high" decoding="async">
+              <img class="video-demo" src="imagens/app/app-01-inicio-800.webp" srcset="imagens/app/app-01-inicio-400.webp 400w, imagens/app/app-01-inicio-800.webp 800w" sizes="(min-width: 1024px) 300px, 62vw" alt="Tela inicial do app: valor da hora, serviços que precisam de ajuste e quanto fica de fora no mês" width="400" height="866" fetchpriority="high" decoding="async">
             </div>
           </div>
           <div class="flutuante flutuante--a" aria-hidden="true">
@@ -120,106 +127,159 @@
       </div>
     </section>
 
-    <!-- DOBRA 2 | O QUE VOCÊ RECEBE -->
-    <section class="secao secao--branca" id="o-que-recebe" aria-labelledby="recebe-titulo">
-      <div class="container recebe">
-        <div class="recebe__texto">
-          <h2 id="recebe-titulo" class="titulo-secao">Sua calculadora faz as contas. Você cuida das clientes!</h2>
-          <p class="subtitulo">Tudo o que você precisa para organizar seus preços e valorizar seu trabalho:</p>
-        </div>
-
-        <ul class="topicos">
-          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Calculadora automática de preços</li>
-          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Serviços de cabelo já cadastrados e personalizáveis</li>
-          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Cálculo do valor da sua hora de trabalho</li>
-          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Cálculo dos custos de cada atendimento</li>
-          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Tabela de preços personalizada</li>
-          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Guia rápido de utilização</li>
-          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Acesso pelo celular e suporte pelo WhatsApp</li>
+    <!-- DOBRA 2 | DOR -->
+    <section class="secao secao--branca" id="dor" aria-labelledby="dor-titulo">
+      <div class="container">
+        <h2 id="dor-titulo" class="titulo-secao titulo-secao--centro">Definir o preço dos seus serviços não precisa ser no chute.</h2>
+        <ul class="dores">
+          <li><svg class="icone" aria-hidden="true"><use href="#i-x"/></svg>Copiar o preço da colega</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-x"/></svg>Cobrar no olho</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-x"/></svg>Trabalhar o mês inteiro e não sobrar</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-x"/></svg>O produto subir e o preço ficar igual</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-x"/></svg>Esquecer a taxa da maquininha</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-x"/></svg>Medo de aumentar e a cliente sumir</li>
         </ul>
+        <p class="dor__ponte">Quem fecha o mês com lucro calcula o preço pelos próprios gastos e pelo tempo de cada atendimento, <strong>não pelo preço da concorrência</strong>.</p>
+      </div>
+    </section>
 
-        <div class="recebe__acao">
-          <a class="botao" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+    <!-- DOBRA 3 | PRÉVIAS DO APP (telas reais da demonstração do app, com dados de exemplo) -->
+    <section class="secao secao--nude" id="previas" aria-labelledby="previas-titulo">
+      <div class="container">
+        <h2 id="previas-titulo" class="titulo-secao titulo-secao--centro">Veja a calculadora por dentro</h2>
+        <p class="subtitulo subtitulo--centro">Telas reais do app, com dados de exemplo. Deslize para ver todas →</p>
+        <div class="carrossel" data-carrossel>
+          <div class="carrossel__trilho previas" tabindex="0" role="region" aria-label="Telas do app">
+          <figure class="previa">
+            <div class="celular celular--previa"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-01-inicio-400.webp" srcset="imagens/app/app-01-inicio-400.webp 400w, imagens/app/app-01-inicio-800.webp 800w" sizes="(min-width: 768px) 230px, 62vw" alt="Tela inicial com o valor da hora, serviços que precisam de ajuste e quanto fica de fora no mês" width="400" height="866" loading="lazy" decoding="async"></div></div>
+            <figcaption>Início: o resumo do seu mês</figcaption>
+          </figure>
+          <figure class="previa">
+            <div class="celular celular--previa"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-02-valor-da-hora-400.webp" srcset="imagens/app/app-02-valor-da-hora-400.webp 400w, imagens/app/app-02-valor-da-hora-800.webp 800w" sizes="(min-width: 768px) 230px, 62vw" alt="Tela Valor da minha hora com o resultado de R$ 26,25 e o campo da taxa da maquininha" width="400" height="866" loading="lazy" decoding="async"></div></div>
+            <figcaption>O valor da sua hora</figcaption>
+          </figure>
+          <figure class="previa">
+            <div class="celular celular--previa"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-03-somar-gastos-400.webp" srcset="imagens/app/app-03-somar-gastos-400.webp 400w, imagens/app/app-03-somar-gastos-800.webp 800w" sizes="(min-width: 768px) 230px, 62vw" alt="Lista pronta de gastos do salão: aluguel, água, luz, internet e limpeza" width="400" height="866" loading="lazy" decoding="async"></div></div>
+            <figcaption>Me ajude a somar os gastos do mês</figcaption>
+          </figure>
+          <figure class="previa">
+            <div class="celular celular--previa"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-04-calculadora-400.webp" srcset="imagens/app/app-04-calculadora-400.webp 400w, imagens/app/app-04-calculadora-800.webp 800w" sizes="(min-width: 768px) 230px, 62vw" alt="Cálculo da progressiva: custo base, lucro e preço sugerido de R$ 186,00" width="400" height="866" loading="lazy" decoding="async"></div></div>
+            <figcaption>A calculadora de um serviço</figcaption>
+          </figure>
+          <figure class="previa">
+            <div class="celular celular--previa"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-05-frasco-400.webp" srcset="imagens/app/app-05-frasco-400.webp 400w, imagens/app/app-05-frasco-800.webp 800w" sizes="(min-width: 768px) 230px, 62vw" alt="Frasco de R$ 360 que rende 8 aplicações: custo de R$ 45,00 por atendimento" width="400" height="866" loading="lazy" decoding="async"></div></div>
+            <figcaption>Calcular pelo frasco</figcaption>
+          </figure>
+          <figure class="previa">
+            <div class="celular celular--previa"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-06-ajustar-400.webp" srcset="imagens/app/app-06-ajustar-400.webp 400w, imagens/app/app-06-ajustar-800.webp 800w" sizes="(min-width: 768px) 230px, 62vw" alt="Progressiva com o selo Ajustar: R$ 36,00 de fora em cada uma, R$ 288,00 por mês" width="400" height="866" loading="lazy" decoding="async"></div></div>
+            <figcaption>Selo “Ajustar” com a diferença em reais</figcaption>
+          </figure>
+          <figure class="previa">
+            <div class="celular celular--previa"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-07-meus-precos-400.webp" srcset="imagens/app/app-07-meus-precos-400.webp 400w, imagens/app/app-07-meus-precos-800.webp 800w" sizes="(min-width: 768px) 230px, 62vw" alt="Tabela de serviços com o selo Preço certo e o aviso de quanto fica de fora no mês" width="400" height="866" loading="lazy" decoding="async"></div></div>
+            <figcaption>Meus preços: a sua tabela pronta</figcaption>
+          </figure>
+          </div>
+          <button type="button" class="carrossel__seta carrossel__seta--ant" data-passo="-1" aria-label="Ver tela anterior"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          <button type="button" class="carrossel__seta carrossel__seta--prox" data-passo="1" aria-label="Ver próxima tela"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
         </div>
       </div>
     </section>
 
-    <!-- DOBRA 3 | COMO FUNCIONA -->
+    <!-- DOBRA 4 | COMO FUNCIONA -->
     <section class="secao secao--nude" id="como-funciona" aria-labelledby="passos-titulo">
       <div class="container">
-        <h2 id="passos-titulo" class="titulo-secao titulo-secao--centro">Descubra quanto cobrar em 3 passos simples!</h2>
+        <h2 id="passos-titulo" class="titulo-secao titulo-secao--centro">Descubra quanto cobrar em 4 passos simples!</h2>
 
-        <ol class="passos">
+        <ol class="passos passos--4">
           <li class="passo">
             <span class="passo__numero" aria-hidden="true">1</span>
             <div class="passo__cartao">
-              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-tesoura"/></svg></span>
-              <h3 class="passo__titulo"><span class="sr-only">1. </span>Escolha o serviço</h3>
-              <p>Selecione corte, escova, progressiva ou cadastre seus próprios serviços.</p>
+              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-recibo"/></svg></span>
+              <h3 class="passo__titulo"><span class="sr-only">1. </span>Some seus gastos do mês</h3>
+              <p>Aluguel, luz, produtos de limpeza: o app traz uma lista pronta de despesas de salão.</p>
             </div>
           </li>
           <li class="passo">
             <span class="passo__numero" aria-hidden="true">2</span>
             <div class="passo__cartao">
-              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-lapis"/></svg></span>
-              <h3 class="passo__titulo"><span class="sr-only">2. </span>Informe seus valores</h3>
-              <p>Preencha os custos, o tempo de atendimento e quanto deseja lucrar.</p>
+              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-relogio"/></svg></span>
+              <h3 class="passo__titulo"><span class="sr-only">2. </span>Informe quanto você atende</h3>
+              <p>Horas por dia e dias por semana viram o valor da sua hora.</p>
             </div>
           </li>
           <li class="passo">
             <span class="passo__numero" aria-hidden="true">3</span>
             <div class="passo__cartao">
+              <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-tesoura"/></svg></span>
+              <h3 class="passo__titulo"><span class="sr-only">3. </span>Escolha o serviço</h3>
+              <p>Corte, escova, progressiva: ajuste o tempo e os produtos usados, até pelo preço do frasco.</p>
+            </div>
+          </li>
+          <li class="passo">
+            <span class="passo__numero" aria-hidden="true">4</span>
+            <div class="passo__cartao">
               <span class="passo__icone"><svg class="icone" aria-hidden="true"><use href="#i-calculadora"/></svg></span>
-              <h3 class="passo__titulo"><span class="sr-only">3. </span>Descubra quanto cobrar</h3>
-              <p>A calculadora faz as contas e mostra o preço recomendado para o serviço.</p>
+              <h3 class="passo__titulo"><span class="sr-only">4. </span>Veja o preço certo</h3>
+              <p>O app soma custo, lucro e taxa da maquininha e compara com o que você cobra hoje.</p>
             </div>
           </li>
         </ol>
 
         <div class="fecho">
           <p class="fecho__frase"><span>Sem fórmulas difíceis.</span> <span>Sem contas complicadas.</span> <strong>Tudo pelo celular.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 5 | CHAMADA INTERMEDIÁRIA -->
+    <section class="secao secao--branca" id="chamada" aria-labelledby="chamada-titulo">
+      <div class="container chamada">
+        <div class="celular celular--chamada"><div class="celular__tela celular__tela--video"><img class="video-demo" src="imagens/app/app-07-meus-precos-400.webp" srcset="imagens/app/app-07-meus-precos-400.webp 400w, imagens/app/app-07-meus-precos-800.webp 800w" sizes="(min-width: 768px) 260px, 60vw" alt="Tela Meus preços: você está deixando R$ 438,00 por mês de fora" width="400" height="866" loading="lazy" decoding="async"></div></div>
+        <div class="chamada__texto">
+          <h2 id="chamada-titulo" class="titulo-secao">Quanto você deixou de ganhar este mês?</h2>
+          <p class="subtitulo">Coloque o que você cobra hoje em cada serviço. O app mostra, em reais, quanto fica de fora em cada atendimento e no mês inteiro.</p>
           <a class="botao" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- DOBRA 4 | PROVA SOCIAL
-         Sete depoimentos reais e autorizados pelo Luiz (28/10/2026), os mesmos da página B.
-         Telefones já desfocados nos arquivos. Não acrescentar prints sem autorização. -->
-    <section class="secao secao--cafe" id="depoimentos" aria-labelledby="depoimentos-titulo">
+    <!-- DOBRA 6 | PARA QUEM É -->
+    <section class="secao secao--nude" id="para-quem" aria-labelledby="para-quem-titulo">
       <div class="container">
-        <div class="titulo-secao--centro">
-          <p class="sobretitulo sobretitulo--claro">QUEM USA, CONTA</p>
-          <h2 id="depoimentos-titulo" class="titulo-secao titulo-secao--claro">Mais segurança para cobrar.</h2>
-          <p class="subtitulo subtitulo--centro subtitulo--claro">Veja o que as clientes dizem sobre usar a Calculadora no dia a dia. Deslize para conferir →</p>
+        <h2 id="para-quem-titulo" class="titulo-secao titulo-secao--centro">Para quem é a Calculadora</h2>
+        <ul class="para-quem">
+          <li><strong>Atende sozinha, em casa ou no próprio salão</strong><span>Sabe quanto vale a sua hora antes de marcar o próximo horário.</span></li>
+          <li><strong>Faz progressiva, coloração e outras químicas</strong><span>Coloca no preço o custo real do produto, até pelo frasco.</span></li>
+          <li><strong>Recebe no cartão</strong><span>A taxa da maquininha entra no preço e para de sair do seu lucro.</span></li>
+          <li><strong>Não reajusta os preços há tempo</strong><span>Vê quais serviços precisam de ajuste e de quanto.</span></li>
+          <li><strong>Está começando agora</strong><span>Monta a primeira tabela de preços a partir dos seus gastos.</span></li>
+          <li><strong>Tem aluguel e contas fixas do salão</strong><span>Divide as contas do mês pelas horas de atendimento.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DOBRA 7 | PRODUTO COMPLETO -->
+    <section class="secao secao--branca" id="o-que-recebe" aria-labelledby="recebe-titulo">
+      <div class="container recebe">
+        <div class="recebe__texto">
+          <p class="sobretitulo">✦ CALCULADORA COMPLETA + 5 BÔNUS</p>
+          <h2 id="recebe-titulo" class="titulo-secao">Sua calculadora faz as contas. Você cuida das clientes!</h2>
         </div>
 
-        <div class="depoimentos-carrossel">
-          <div class="depoimentos" tabindex="0" role="region" aria-label="Depoimentos autorizados">
-          <figure class="depoimento">
-            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-01-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-01-400.webp 400w, imagens/depoimentos/depoimento-autorizado-01-600.webp 600w, imagens/depoimentos/depoimento-autorizado-01-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp sobre o uso da calculadora para definir os preços." width="400" height="711" loading="lazy" decoding="async">
-          </figure>
-          <figure class="depoimento">
-            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-02-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-02-400.webp 400w, imagens/depoimentos/depoimento-autorizado-02-600.webp 600w, imagens/depoimentos/depoimento-autorizado-02-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Dois comentários no WhatsApp sobre a experiência com o aplicativo." width="400" height="606" loading="lazy" decoding="async">
-          </figure>
-          <figure class="depoimento">
-            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-03-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-03-400.webp 400w, imagens/depoimentos/depoimento-autorizado-03-600.webp 600w, imagens/depoimentos/depoimento-autorizado-03-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Cliente comenta no WhatsApp que o aplicativo ajudou no negócio; telefone desfocado." width="400" height="711" loading="lazy" decoding="async">
-          </figure>
-          <figure class="depoimento">
-            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-04-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-04-400.webp 400w, imagens/depoimentos/depoimento-autorizado-04-600.webp 600w, imagens/depoimentos/depoimento-autorizado-04-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes nas redes sociais sobre a calculadora e o suporte." width="400" height="546" loading="lazy" decoding="async">
-          </figure>
-          <figure class="depoimento">
-            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-05-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-05-400.webp 400w, imagens/depoimentos/depoimento-autorizado-05-600.webp 600w, imagens/depoimentos/depoimento-autorizado-05-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre o uso da calculadora na precificação." width="400" height="521" loading="lazy" decoding="async">
-          </figure>
-          <figure class="depoimento">
-            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-06-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-06-400.webp 400w, imagens/depoimentos/depoimento-autorizado-06-600.webp 600w, imagens/depoimentos/depoimento-autorizado-06-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre a experiência com o aplicativo." width="400" height="530" loading="lazy" decoding="async">
-          </figure>
-          <figure class="depoimento">
-            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-07-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-07-400.webp 400w, imagens/depoimentos/depoimento-autorizado-07-600.webp 600w, imagens/depoimentos/depoimento-autorizado-07-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp com demonstração do aplicativo; contato desfocado." width="400" height="710" loading="lazy" decoding="async">
-          </figure>
-          </div>
-          <button type="button" class="depoimentos__seta depoimentos__seta--ant" data-depo="-1" aria-label="Ver depoimento anterior"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-          <button type="button" class="depoimentos__seta depoimentos__seta--prox" data-depo="1" aria-label="Ver próximo depoimento"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <ul class="topicos">
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Serviços de cabelo já cadastrados: é só ajustar tempo e produtos.</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Lista pronta de despesas de salão para somar os gastos do mês.</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Valor da sua hora calculado pelas horas e dias que você atende.</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Preço de cada serviço com custo, lucro e taxa da maquininha.</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Selo “Preço certo” ou “Ajustar” comparando com o que você cobra hoje.</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Tabela de preços que se atualiza quando os seus gastos mudam.</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>No navegador do celular, com guia de preenchimento e suporte no WhatsApp.</li>
+          <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>5 bônus para comunicar reajustes, responder pedidos de desconto e trazer clientes de volta.</li>
+        </ul>
+        <p class="recebe__fim">Preencha uma vez e volte sempre que o preço de um produto ou uma conta mudar.</p>
+
+        <div class="recebe__acao">
+          <a class="botao" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
         </div>
       </div>
     </section>
@@ -322,11 +382,24 @@
       <div class="container">
         <h2 id="planos-titulo" class="titulo-secao titulo-secao--centro">Tudo o que será liberado para você hoje</h2>
 
+        <div class="valor-stack">
+          <p class="valor-stack__titulo">Tudo isto entra no seu acesso:</p>
+          <ul>
+            <li><span>Calculadora de Precificação para Cabeleireiras</span><span>R$&nbsp;147,00</span></li>
+            <li><span>20 mensagens para comunicar aumento de preços</span><span>R$&nbsp;37,00</span></li>
+            <li><span>20 respostas para pedidos de desconto</span><span>R$&nbsp;27,00</span></li>
+            <li><span>Kit Orçamento Profissional</span><span>R$&nbsp;47,00</span></li>
+            <li><span>Tabela de rendimento de produtos capilares</span><span>R$&nbsp;37,00</span></li>
+            <li><span>Kit de Controle de Clientes</span><span>R$&nbsp;47,00</span></li>
+          </ul>
+          <p class="valor-stack__total">Total: <s>R$&nbsp;342,00</s></p>
+        </div>
+
         <div class="planos planos--unica">
           <article class="plano plano--premium" aria-labelledby="plano-oferta">
             <span class="plano__selo"><svg class="icone" aria-hidden="true"><use href="#i-coroa"/></svg>5 BÔNUS INCLUÍDOS</span>
             <h3 id="plano-oferta" class="plano__nome">CALCULADORA COMPLETA +&nbsp;5&nbsp;BÔNUS</h3>
-            <p class="plano__de">De <s>R$ 147,00</s></p>
+            <p class="plano__de">De <s>R$ 342,00</s></p>
             <p class="plano__preco"><span class="plano__moeda">R$</span> <span class="plano__valor">37,90</span></p>
             <p class="plano__pagamento">à vista ou em até 12x no cartão</p>
             <div class="plano__beneficios">
@@ -355,6 +428,50 @@
       </div>
     </section>
 
+    <!-- DOBRA 10 | PROVA SOCIAL
+         Sete depoimentos reais e autorizados pelo Luiz (28/10/2026), os mesmos da página B.
+         Telefones já desfocados nos arquivos. Não acrescentar prints sem autorização. -->
+    <section class="secao secao--cafe" id="depoimentos" aria-labelledby="depoimentos-titulo">
+      <div class="container">
+        <div class="titulo-secao--centro">
+          <p class="sobretitulo sobretitulo--claro">QUEM USA, CONTA</p>
+          <h2 id="depoimentos-titulo" class="titulo-secao titulo-secao--claro">Mais segurança para cobrar.</h2>
+          <p class="subtitulo subtitulo--centro subtitulo--claro">Veja o que as clientes dizem sobre usar a Calculadora no dia a dia. Deslize para conferir →</p>
+        </div>
+
+        <div class="depoimentos-carrossel">
+          <div class="depoimentos" tabindex="0" role="region" aria-label="Depoimentos autorizados">
+          <figure class="depoimento">
+            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-01-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-01-400.webp 400w, imagens/depoimentos/depoimento-autorizado-01-600.webp 600w, imagens/depoimentos/depoimento-autorizado-01-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp sobre o uso da calculadora para definir os preços." width="400" height="711" loading="lazy" decoding="async">
+          </figure>
+          <figure class="depoimento">
+            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-02-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-02-400.webp 400w, imagens/depoimentos/depoimento-autorizado-02-600.webp 600w, imagens/depoimentos/depoimento-autorizado-02-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Dois comentários no WhatsApp sobre a experiência com o aplicativo." width="400" height="606" loading="lazy" decoding="async">
+          </figure>
+          <figure class="depoimento">
+            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-03-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-03-400.webp 400w, imagens/depoimentos/depoimento-autorizado-03-600.webp 600w, imagens/depoimentos/depoimento-autorizado-03-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Cliente comenta no WhatsApp que o aplicativo ajudou no negócio; telefone desfocado." width="400" height="711" loading="lazy" decoding="async">
+          </figure>
+          <figure class="depoimento">
+            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-04-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-04-400.webp 400w, imagens/depoimentos/depoimento-autorizado-04-600.webp 600w, imagens/depoimentos/depoimento-autorizado-04-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes nas redes sociais sobre a calculadora e o suporte." width="400" height="546" loading="lazy" decoding="async">
+          </figure>
+          <figure class="depoimento">
+            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-05-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-05-400.webp 400w, imagens/depoimentos/depoimento-autorizado-05-600.webp 600w, imagens/depoimentos/depoimento-autorizado-05-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre o uso da calculadora na precificação." width="400" height="521" loading="lazy" decoding="async">
+          </figure>
+          <figure class="depoimento">
+            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-06-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-06-400.webp 400w, imagens/depoimentos/depoimento-autorizado-06-600.webp 600w, imagens/depoimentos/depoimento-autorizado-06-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Comentários de clientes sobre a experiência com o aplicativo." width="400" height="530" loading="lazy" decoding="async">
+          </figure>
+          <figure class="depoimento">
+            <img class="depoimento__print" data-src="imagens/depoimentos/depoimento-autorizado-07-400.webp" data-srcset="imagens/depoimentos/depoimento-autorizado-07-400.webp 400w, imagens/depoimentos/depoimento-autorizado-07-600.webp 600w, imagens/depoimentos/depoimento-autorizado-07-800.webp 800w" sizes="(min-width: 768px) 280px, calc(78vw - 20px)" alt="Conversa no WhatsApp com demonstração do aplicativo; contato desfocado." width="400" height="710" loading="lazy" decoding="async">
+          </figure>
+          </div>
+          <button type="button" class="depoimentos__seta depoimentos__seta--ant" data-depo="-1" aria-label="Ver depoimento anterior"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+          <button type="button" class="depoimentos__seta depoimentos__seta--prox" data-depo="1" aria-label="Ver próximo depoimento"><svg class="icone" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        </div>
+        <div class="depoimentos__acao">
+          <a class="botao botao--creme" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+        </div>
+      </div>
+    </section>
+
     <!-- DOBRA 7 | GARANTIA -->
     <section class="secao secao--branca" id="garantia" aria-labelledby="garantia-titulo">
       <div class="container garantia">
@@ -375,6 +492,18 @@
           <p class="garantia__destaque">Devolvemos <mark>100% do valor pago</mark>.</p>
           <p class="garantia__fim">Sem perguntas. Sem burocracia.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- DOBRA 12 | DEPOIS DA COMPRA -->
+    <section class="secao secao--nude" id="pos-compra" aria-labelledby="pos-compra-titulo">
+      <div class="container">
+        <h2 id="pos-compra-titulo" class="titulo-secao titulo-secao--centro">Como você recebe a calculadora</h2>
+        <ol class="pos-compra">
+          <li><span class="pos-compra__num" aria-hidden="true">1</span><div><strong>Pague no Pix ou no cartão.</strong><p>A confirmação chega no seu e-mail.</p></div></li>
+          <li><span class="pos-compra__num" aria-hidden="true">2</span><div><strong>Receba o acesso.</strong><p>O acesso é liberado assim que o pagamento é confirmado.</p></div></li>
+          <li><span class="pos-compra__num" aria-hidden="true">3</span><div><strong>Entre no app.</strong><p>Use o seu e-mail e a senha do primeiro acesso; depois o app pede para você criar a sua.</p></div></li>
+        </ol>
       </div>
     </section>
 
@@ -414,6 +543,15 @@
       </div>
     </section>
 
+    <!-- DOBRA 14 | FECHO -->
+    <section class="secao secao--cafe" id="fecho-final" aria-labelledby="fecho-titulo">
+      <div class="container fecho-final">
+        <h2 id="fecho-titulo" class="titulo-secao titulo-secao--centro titulo-secao--claro">Seu salão dá lucro ou você paga para trabalhar?</h2>
+        <p class="subtitulo subtitulo--centro subtitulo--claro">Em poucos minutos você descobre, serviço por serviço, e passa a cobrar pelos seus números.</p>
+        <a class="botao botao--creme" href="#planos">Quero minha calculadora <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="rodape">
@@ -423,6 +561,6 @@
   </footer>
 
   <script src="config.js"></script>
-  <script src="script.js?v=2.2.0"></script>
+  <script src="script.js?v=3.0.0"></script>
 </body>
 </html>

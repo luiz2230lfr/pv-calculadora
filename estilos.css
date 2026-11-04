@@ -772,6 +772,123 @@ s { text-decoration-thickness: 2px; }
 .plano__garantias { margin-top: var(--e2); text-align: center; font-size: 0.8125rem; line-height: 1.5; color: var(--nude-medio); }
 .plano__garantias span { white-space: nowrap; }
 
+/* ===== v3.0.0 — estrutura PaginaPro (mesmo visual da página) ===== */
+/* Topo: nome do produto e 3 bullets */
+.hero__selo {
+  display: inline-block; margin-bottom: var(--e2); padding: 6px 14px; border-radius: var(--r-pill);
+  background: var(--nude-claro); border: 1px solid var(--nude);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; color: var(--cafe);
+}
+.hero__descricao { margin-bottom: var(--e3); }
+.hero__bullets { display: grid; gap: 10px; max-width: 540px; margin: 0 auto var(--e4); text-align: left; }
+.hero__bullets li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9875rem; line-height: 1.45; color: var(--grafite); }
+.hero__bullets .topicos__check { flex: none; width: 24px; height: 24px; padding: 5px; margin-top: 1px; }
+@media (min-width: 1024px) { .hero__bullets { margin-inline: 0; } }
+@media (max-width: 479px) {
+  .hero__selo { font-size: 0.625rem; letter-spacing: 0.04em; padding: 6px 10px; }
+  .recebe__texto .sobretitulo::before, .recebe__texto .sobretitulo::after { display: none; }
+}
+
+/* Dor: 6 frases curtas e a frase de ligação */
+.dores { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 760px; margin: var(--e5) auto 0; }
+.dores li {
+  display: flex; align-items: center; gap: 10px; padding: 14px 16px;
+  border: 1px solid var(--linha); border-radius: var(--r-md); background: var(--off);
+  font-size: 0.9875rem; font-weight: 600; line-height: 1.35; color: var(--grafite);
+}
+.dores .icone { flex: none; width: 22px; height: 22px; padding: 4px; border-radius: 50%; background: #F6E3E3; color: #B42318; stroke-width: 3; }
+@media (max-width: 479px) { .dores { grid-template-columns: 1fr; } }
+.dor__ponte { max-width: 640px; margin: var(--e5) auto 0; text-align: center; font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem); line-height: 1.5; color: var(--texto-suave); }
+.dor__ponte strong { color: var(--cafe); }
+
+/* Prévias do app: carrossel de celulares com telas reais */
+.carrossel { position: relative; margin-top: var(--e5); }
+.carrossel__trilho {
+  display: flex; align-items: flex-start; gap: var(--e3);
+  margin: 0 calc(var(--e2) * -1); padding: var(--e2) var(--e2) var(--e3);
+  overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--e2);
+  scrollbar-width: thin; scrollbar-color: rgba(199, 162, 106, 0.6) transparent;
+}
+.previa { flex: 0 0 min(62vw, 240px); scroll-snap-align: center; text-align: center; }
+.celular--previa { width: 100%; }
+.previa figcaption { margin-top: 14px; font-size: 0.9375rem; font-weight: 700; line-height: 1.35; color: var(--cafe); }
+.carrossel__seta { display: none; }
+@media (min-width: 768px) {
+  .carrossel__trilho { margin: 0; padding-inline: 0; scroll-padding-inline: 0; }
+  .previa { flex-basis: 230px; scroll-snap-align: start; }
+  .carrossel__seta {
+    position: absolute; top: 42%; z-index: 2; transform: translateY(-50%);
+    display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%;
+    background: var(--cafe); color: var(--off); cursor: pointer; box-shadow: var(--sombra-2);
+  }
+  .carrossel__seta:hover { background: var(--cafe-escuro); }
+  .carrossel__seta .icone { width: 22px; height: 22px; }
+  .carrossel__seta--ant { left: -20px; }
+  .carrossel__seta--ant .icone { transform: rotate(90deg); }
+  .carrossel__seta--prox { right: -20px; }
+  .carrossel__seta--prox .icone { transform: rotate(-90deg); }
+}
+
+/* Como funciona com 4 passos */
+@media (min-width: 900px) {
+  .passos--4 { grid-template-columns: repeat(4, 1fr); gap: var(--e3); }
+  .passos--4::before { left: 12.5%; right: 12.5%; }
+}
+
+/* Chamada intermediária: celular + texto */
+.chamada { display: grid; gap: var(--e5); align-items: center; justify-items: center; text-align: center; max-width: 900px; }
+.celular--chamada { width: min(60vw, 250px); }
+.chamada__texto .subtitulo { margin-inline: auto; }
+.chamada__texto .botao { margin-top: var(--e4); }
+@media (min-width: 768px) {
+  .chamada { grid-template-columns: auto 1fr; justify-items: start; text-align: left; gap: var(--e8); }
+  .chamada__texto .subtitulo { margin-inline: 0; }
+}
+
+/* Para quem é: 6 situações */
+.para-quem { display: grid; gap: var(--e2); max-width: 980px; margin: var(--e5) auto 0; }
+.para-quem li {
+  display: grid; gap: 6px; padding: var(--e3); border: 1px solid var(--linha); border-radius: var(--r-lg);
+  background: var(--branco); box-shadow: var(--sombra-1);
+}
+.para-quem strong { font-size: 1.0625rem; font-weight: 800; line-height: 1.3; color: var(--cafe); }
+.para-quem span { color: var(--texto-suave); line-height: 1.5; }
+@media (min-width: 640px) { .para-quem { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .para-quem { grid-template-columns: repeat(3, 1fr); } }
+
+/* Produto completo: selo e frase final */
+.recebe__texto .sobretitulo { justify-content: center; }
+.recebe__fim { max-width: 640px; margin: var(--e4) auto 0; text-align: center; font-weight: 600; color: var(--texto-suave); }
+
+/* Oferta: caixa com a soma de valor antes do card */
+.valor-stack {
+  max-width: 560px; margin: var(--e5) auto 0; padding: var(--e3);
+  border: 2px dashed rgba(199, 162, 106, 0.7); border-radius: var(--r-lg); background: var(--branco);
+}
+.valor-stack__titulo { font-weight: 800; color: var(--cafe); margin-bottom: 12px; }
+.valor-stack li { display: flex; justify-content: space-between; gap: var(--e2); padding: 10px 0; border-bottom: 1px solid var(--linha); color: var(--grafite); line-height: 1.35; }
+.valor-stack li span:last-child { flex: none; font-weight: 700; color: var(--texto-suave); }
+.valor-stack__total { margin-top: 12px; text-align: right; font-weight: 800; color: var(--cafe); }
+.valor-stack__total s { text-decoration-color: rgba(180, 35, 24, 0.7); }
+.valor-stack + .planos { margin-top: var(--e8); }
+
+/* Botão creme sobre fundo café (depoimentos e fecho) */
+.depoimentos__acao { display: flex; justify-content: center; margin-top: var(--e5); }
+.botao--creme { background: var(--off); border-color: var(--off); color: var(--cafe-escuro); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); }
+.botao--creme:hover { background: var(--nude-claro); border-color: var(--nude-claro); color: var(--cafe-escuro); }
+
+/* Depois da compra: 3 passos */
+.pos-compra { display: grid; gap: var(--e2); max-width: 980px; margin: var(--e5) auto 0; }
+.pos-compra li { display: flex; gap: var(--e2); align-items: flex-start; padding: var(--e3); border-radius: var(--r-lg); background: var(--branco); border: 1px solid var(--linha); }
+.pos-compra__num { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cafe); color: var(--dourado); font-weight: 800; }
+.pos-compra strong { display: block; font-weight: 800; color: var(--cafe); margin-bottom: 4px; }
+.pos-compra p { color: var(--texto-suave); line-height: 1.5; }
+@media (min-width: 900px) { .pos-compra { grid-template-columns: repeat(3, 1fr); } }
+
+/* Fecho final */
+.fecho-final { display: flex; flex-direction: column; align-items: center; gap: var(--e3); text-align: center; position: relative; }
+.fecho-final .subtitulo { margin-top: 0; }
+
 /* Página estática (pedido do Luiz, 03/11/2026): sem animações de entrada, sem movimento ao passar o mouse
    e sem transições. Só o card da oferta continua pulsando. */
 *, *::before, *::after { transition: none !important; }

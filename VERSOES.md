@@ -1,5 +1,12 @@
 # Histórico de versões da página de vendas
 
+## v3.0.0 — 04/11/2026 (página A)
+- Estrutura da skill PaginaPro V1, mantendo o visual, a headline/sub aprovadas, bônus, preço R$ 37,90, garantia de 7 dias, checkout Greenn e rastreamento.
+- Nova ordem: topo (selo com o nome, 3 bullets, botão "Ver o app por dentro" → prévias) → dor (6 frases + ligação) → prévias (carrossel com 7 telas reais do app v1.3, tiradas da demonstração com dados de exemplo, em `imagens/app/`) → como funciona (4 passos) → chamada "Quanto você deixou de ganhar este mês?" → para quem é (6 situações) → produto completo (8 benefícios) → bônus → oferta com caixa de soma (R$ 147 + R$ 195 = R$ 342) → depoimentos (agora depois da oferta) → garantia → como você recebe (3 passos) → FAQ → fecho com a headline.
+- Card da oferta: "De R$ 342,00" (soma do app R$ 147 + bônus R$ 195), igual à caixa de soma.
+- Botões: topo → prévias; botões do meio e do fim → oferta; só o botão do card → checkout.
+- Textos em `copy-estrutura-paginapro.md` (fora do site).
+
 ## v2.2.0 — 03/11/2026 (página A)
 - Checkout trocado para a Greenn: https://payfast.greenn.com.br/redirect/813490 (R$ 37,90; o rastreador novo reconhece a Greenn e marca o link com sck/xcod + UTMs). Linha de parcelas: "à vista ou em até 12x no cartão" (a Greenn só mostra o valor da parcela no passo de pagamento; tarifa informada 3,39% a.m.).
 - Garantia de 7 dias em toda a página (topo, card, linha abaixo do botão, seção de garantia, FAQ 5 e 6).
