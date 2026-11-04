@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v3.0.2 — 04/11/2026 (página A)
+- Topo sem os 3 balões em volta do celular (repetiam os checks e cobriam a tela do app). "Suporte no WhatsApp" foi para a linha de confiança. Celular um pouco maior. Cópia sem rastreio atualizada.
+
 ## v3.0.1 — 04/11/2026 (página A)
 - Topo refeito como no modelo da skill: tudo centralizado e empilhado (headline > celular com a tela do app > subheadline > 3 bullets curtos > botão > confiança). Saiu o selo com o nome repetido (o nome já está na logo). Bullets: "O preço certo de cada serviço", "O valor da sua hora, calculado pelo app", "Quanto você deixa de ganhar por mês". Celular e círculo menores. Cópia sem rastreio atualizada.
 
