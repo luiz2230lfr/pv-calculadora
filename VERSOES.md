@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v3.0.1 — 04/11/2026 (página A)
+- Topo refeito como no modelo da skill: tudo centralizado e empilhado (headline > celular com a tela do app > subheadline > 3 bullets curtos > botão > confiança). Saiu o selo com o nome repetido (o nome já está na logo). Bullets: "O preço certo de cada serviço", "O valor da sua hora, calculado pelo app", "Quanto você deixa de ganhar por mês". Celular e círculo menores. Cópia sem rastreio atualizada.
+
 ## v3.0.0 — 04/11/2026 (página A)
 - Estrutura da skill PaginaPro V1, mantendo o visual, a headline/sub aprovadas, bônus, preço R$ 37,90, garantia de 7 dias, checkout Greenn e rastreamento.
 - Nova ordem: topo (selo com o nome, 3 bullets, botão "Ver o app por dentro" → prévias) → dor (6 frases + ligação) → prévias (carrossel com 7 telas reais do app v1.3, tiradas da demonstração com dados de exemplo, em `imagens/app/`) → como funciona (4 passos) → chamada "Quanto você deixou de ganhar este mês?" → para quem é (6 situações) → produto completo (8 benefícios) → bônus → oferta com caixa de soma (R$ 147 + R$ 195 = R$ 342) → depoimentos (agora depois da oferta) → garantia → como você recebe (3 passos) → FAQ → fecho com a headline.

@@ -889,6 +889,33 @@ s { text-decoration-thickness: 2px; }
 .fecho-final { display: flex; flex-direction: column; align-items: center; gap: var(--e3); text-align: center; position: relative; }
 .fecho-final .subtitulo { margin-top: 0; }
 
+/* Topo empilhado e centralizado (v3.0.1): headline > mockup > sub > bullets > botão > confiança */
+.hero--empilhado .hero__fluxo { display: flex; flex-direction: column; align-items: center; gap: var(--e3); max-width: 860px; text-align: center; }
+.hero--empilhado .hero__titulo { max-width: 760px; font-size: clamp(2.125rem, 1.4rem + 3.4vw, 3.5rem); }
+.hero--empilhado .hero__visual { width: min(100%, 360px); margin: 0 auto; padding: var(--e2) 0; grid-column: auto; }
+.hero--empilhado .celular--hero { width: 165px; }
+.hero--empilhado .hero__circulo { width: 290px; }
+.hero--empilhado .flutuante { text-align: left; }
+.hero--empilhado .flutuante { max-width: 150px; font-size: 0.6875rem; padding: 8px 10px 8px 8px; gap: 8px; }
+.hero--empilhado .flutuante__icone { width: 30px; height: 30px; }
+.hero--empilhado .flutuante--a { top: 58%; left: -2%; }
+.hero--empilhado .flutuante--b { top: 18%; right: -2%; left: auto; }
+.hero--empilhado .flutuante--c { bottom: 4%; left: 4%; }
+.hero--empilhado .hero__descricao { max-width: 620px; margin: 0 auto; }
+.hero--empilhado .hero__bullets { display: inline-grid; gap: 8px; width: auto; max-width: 100%; margin: 0 auto; text-align: left; }
+.hero--empilhado .hero__bullets li { align-items: center; font-size: 1rem; font-weight: 600; line-height: 1.35; }
+.hero--empilhado .hero__bullets .topicos__check { margin-top: 0; }
+.hero--empilhado .seguranca { margin-top: 0; justify-content: center; }
+@media (min-width: 768px) {
+  .hero--empilhado .celular--hero { width: 190px; }
+  .hero--empilhado .hero__circulo { width: 330px; }
+  .hero--empilhado .hero__visual { width: 400px; }
+  .hero--empilhado .flutuante { max-width: 170px; font-size: 0.75rem; }
+  .hero--empilhado .flutuante--a { left: -10%; }
+  .hero--empilhado .flutuante--b { right: -10%; }
+  .hero--empilhado .flutuante--c { left: -4%; }
+}
+
 /* Página estática (pedido do Luiz, 03/11/2026): sem animações de entrada, sem movimento ao passar o mouse
    e sem transições. Só o card da oferta continua pulsando. */
 *, *::before, *::after { transition: none !important; }

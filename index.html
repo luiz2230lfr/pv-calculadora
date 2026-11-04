@@ -15,9 +15,9 @@
   <link rel="icon" type="image/png" sizes="48x48" href="imagens/marca/icone-48.png">
   <link rel="apple-touch-icon" href="imagens/marca/icone-180.png">
   <link rel="preload" href="fontes/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="imagens/app/app-01-inicio-800.webp" imagesrcset="imagens/app/app-01-inicio-400.webp 400w, imagens/app/app-01-inicio-800.webp 800w" imagesizes="(min-width: 1024px) 300px, 62vw" fetchpriority="high">
+  <link rel="preload" as="image" href="imagens/app/app-01-inicio-800.webp" imagesrcset="imagens/app/app-01-inicio-400.webp 400w, imagens/app/app-01-inicio-800.webp 800w" imagesizes="220px" fetchpriority="high">
   <link rel="preconnect" href="https://cashflow.mentoriaprocesso.com">
-  <link rel="stylesheet" href="estilos.css?v=3.0.0">
+  <link rel="stylesheet" href="estilos.css?v=3.0.1">
   <script>document.documentElement.classList.add("js");</script>
 
   <!-- Modo sem rastreio: abrir com ?semrastreio=1 no endereço NÃO carrega o rastreador nem o Clarity
@@ -82,33 +82,16 @@
 
   <main id="conteudo">
 
-    <!-- DOBRA 1 | HERO -->
-    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
-      <div class="container hero__grade">
-        <div class="hero__texto">
-          <p class="hero__selo">CALCULADORA DE PRECIFICAÇÃO PARA CABELEIREIRAS</p>
+    <!-- DOBRA 1 | HERO (empilhado e centralizado, como no modelo da skill:
+         headline > mockup > subheadline > bullets > botão > confiança) -->
+    <section class="hero hero--empilhado" id="inicio" aria-labelledby="hero-titulo">
+      <div class="container hero__fluxo">
           <h1 id="hero-titulo" class="hero__titulo">Seu salão dá lucro ou você paga para trabalhar?</h1>
-          <p class="hero__descricao">Cobrar errado faz você perder dinheiro todos os dias sem perceber. Descubra quanto cobrar por cada serviço, em minutos e sem contas complicadas.</p>
-          <ul class="hero__bullets">
-            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Descubra o preço certo de cada serviço direto no celular, sem planilha e sem fazer conta.</li>
-            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Você informa os gastos do mês e o tempo de cada atendimento; o app calcula o valor da sua hora e o preço de cada serviço.</li>
-            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Veja, serviço por serviço, se o que você cobra hoje está certo ou quanto está deixando de fora por mês.</li>
-          </ul>
-          <a class="botao botao--grande" href="#previas">Ver o app por dentro <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
-          <p class="seguranca">
-            <span><svg class="icone" aria-hidden="true"><use href="#i-raio"/></svg>Acesso imediato</span>
-            <span class="seguranca__ponto" aria-hidden="true">•</span>
-            <span><svg class="icone" aria-hidden="true"><use href="#i-cadeado"/></svg>Compra segura</span>
-            <span class="seguranca__ponto" aria-hidden="true">•</span>
-            <span><svg class="icone" aria-hidden="true"><use href="#i-escudo"/></svg>Garantia de 7 dias</span>
-          </p>
-        </div>
-
-        <div class="hero__visual">
+          <div class="hero__visual">
           <div class="hero__circulo" aria-hidden="true"></div>
           <div class="celular celular--hero">
             <div class="celular__tela celular__tela--video">
-              <img class="video-demo" src="imagens/app/app-01-inicio-800.webp" srcset="imagens/app/app-01-inicio-400.webp 400w, imagens/app/app-01-inicio-800.webp 800w" sizes="(min-width: 1024px) 300px, 62vw" alt="Tela inicial do app: valor da hora, serviços que precisam de ajuste e quanto fica de fora no mês" width="400" height="866" fetchpriority="high" decoding="async">
+              <img class="video-demo" src="imagens/app/app-01-inicio-800.webp" srcset="imagens/app/app-01-inicio-400.webp 400w, imagens/app/app-01-inicio-800.webp 800w" sizes="220px" alt="Tela inicial do app: valor da hora, serviços que precisam de ajuste e quanto fica de fora no mês" width="400" height="866" fetchpriority="high" decoding="async">
             </div>
           </div>
           <div class="flutuante flutuante--a" aria-hidden="true">
@@ -124,6 +107,20 @@
             Suporte pelo WhatsApp
           </div>
         </div>
+          <p class="hero__descricao">Cobrar errado faz você perder dinheiro todos os dias sem perceber. Descubra quanto cobrar por cada serviço, em minutos e sem contas complicadas.</p>
+          <ul class="hero__bullets">
+            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>O preço certo de cada serviço</li>
+            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>O valor da sua hora, calculado pelo app</li>
+            <li><svg class="icone topicos__check" aria-hidden="true"><use href="#i-check"/></svg>Quanto você deixa de ganhar por mês</li>
+          </ul>
+          <a class="botao botao--grande" href="#previas">Ver o app por dentro <svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          <p class="seguranca">
+            <span><svg class="icone" aria-hidden="true"><use href="#i-raio"/></svg>Acesso imediato</span>
+            <span class="seguranca__ponto" aria-hidden="true">•</span>
+            <span><svg class="icone" aria-hidden="true"><use href="#i-cadeado"/></svg>Compra segura</span>
+            <span class="seguranca__ponto" aria-hidden="true">•</span>
+            <span><svg class="icone" aria-hidden="true"><use href="#i-escudo"/></svg>Garantia de 7 dias</span>
+          </p>
       </div>
     </section>
 
