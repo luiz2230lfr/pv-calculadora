@@ -1,12 +1,12 @@
 # Histórico de versões da página de vendas
 
-## v3.0.8 — RASCUNHO de 07/11/2026 (página A; branch otimizacao-performance, NÃO publicado)
+## v3.0.8 — 07/11/2026 (página A)
 - Rastreio (CashFlow + Pixel) movido para ANTES do CSS no <head>: o Pixel começa a carregar junto com o CSS em vez de esperar ele terminar. Mesma tag, mesmos atributos, mesmo modo sem rastreio.
 - Preconnect para connect.facebook.net (o Pixel que o CashFlow carrega).
 - CSS: removidas as regras de classes que não existem mais na página (balões do topo, vitrine, slots, recursos, hero antigo etc.). 46 KB -> 40 KB. Estilo calculado idêntico em 360/390/768/1280 px.
 - script.js: removidos o código do vídeo antigo (não há mais <video>) e o plano "basico".
 - imagens/video (vídeo antigo, 735 KB, sem uso) fora da publicação via .vercelignore (arquivo continua na pasta).
-- Versões do CSS e do JS no endereço trocadas para 3.0.8 (força o navegador a pegar os arquivos novos).
+- Versões do CSS e do JS no endereço trocadas para 3.0.8 (força o navegador a pegar os arquivos novos). Cópia sem rastreio atualizada. Relatório: 6 - Documentos/03 - Testes e melhorias/Auditoria tecnica pagina A - 07-11-2026.txt
 
 ## v3.0.7 — 07/11/2026 (página A)
 - Botão do card da oferta: "QUERO MINHA CALCULADORA!" (antes "Quero minha calculadora com os 5 bônus"). Resto igual. Cópia sem rastreio atualizada.
