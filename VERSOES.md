@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v3.0.5 — 07/11/2026 (página A)
+- Checkout trocado para a Wiapy: https://pay.wiapy.com/ghDp34F5ud74 (antes Greenn 813490). Card: "à vista ou em até 9x de R$ 5,49 no cartão" (antes "em até 12x"). Cópia sem rastreio atualizada.
+
 ## v3.0.4 — 07/11/2026 (página A)
 - Rastreador de vendas com o código de oferta novo (o=/data-offer 7dc2b8b6-fde1-40c8-b280-2add3ce5112f; antes 851cccfe…). Resto igual, inclusive o modo sem rastreio. Cópia sem rastreio atualizada.
 
