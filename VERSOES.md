@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v3.0.7 — 07/11/2026 (página A)
+- Botão do card da oferta: "QUERO MINHA CALCULADORA!" (antes "Quero minha calculadora com os 5 bônus"). Resto igual. Cópia sem rastreio atualizada.
+
 ## v3.0.6 — 07/11/2026 (página A)
 - Nova página politica-de-privacidade.html (LGPD; responsável 48.318.852 LUIZ FERNANDO DA ROSA JOAO, CNPJ 48.318.852/0001-58; contato luizdigital2002@gmail.com). A seção 9, "Exclusão de dados", tem link direto (#exclusao-de-dados) para o campo do app da Meta. A página não tem rastreadores. Link discreto no rodapé da página de vendas. Cópia sem rastreio atualizada (agora inclui a política).
 
