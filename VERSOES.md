@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v3.0.4 — 07/11/2026 (página A)
+- Rastreador de vendas com o código de oferta novo (o=/data-offer 7dc2b8b6-fde1-40c8-b280-2add3ce5112f; antes 851cccfe…). Resto igual, inclusive o modo sem rastreio. Cópia sem rastreio atualizada.
+
 ## v3.0.3 — 04/11/2026 (página A)
 - Carrossel das telas do app sem a tela inicial (ela já aparece no celular do topo): quem clica em "Ver o app por dentro" cai direto em telas novas (valor da hora, somar gastos, calculadora, frasco, selo Ajustar, tabela). Cópia sem rastreio atualizada.
 
