@@ -67,7 +67,7 @@ def main():
         "CÓPIA DA PÁGINA A SEM RASTREIO\n"
         "Para abrir: dê dois cliques em index.html.\n"
         "Esta cópia NÃO tem o rastreador de vendas nem o Microsoft Clarity, então não conta visita.\n"
-        "Atenção: os botões de compra continuam levando ao checkout da Payt de verdade. Não preencha dados lá.\n"
+        "Atenção: os botões de compra continuam levando ao checkout de verdade (Wiapy). Não preencha dados lá.\n"
         f"Gerada em {date.today():%d/%m/%Y} a partir da página publicada. Online: https://pv-calculadora.vercel.app/?semrastreio=1\n",
         encoding="utf-8",
     )

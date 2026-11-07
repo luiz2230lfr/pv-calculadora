@@ -119,10 +119,9 @@ s { text-decoration-thickness: 2px; }
 .botao:hover .icone { transform: translateX(3px); }
 .botao:active { transform: translateY(0); box-shadow: 0 4px 10px rgba(74, 52, 46, 0.22); }
 .botao--grande { min-height: 64px; padding-inline: var(--e5); font-size: 1.0625rem; }
-.botao--pequeno { min-height: 44px; padding: var(--e1) var(--e3); font-size: 0.8125rem; box-shadow: none; }
+
 .botao--bloco { width: 100%; }
-.botao--contorno { background: transparent; color: var(--cafe); box-shadow: none; }
-.botao--contorno:hover { background: var(--cafe); color: var(--off); }
+
 .botao--dourado { background: var(--dourado); border-color: var(--dourado); color: var(--cafe-escuro); box-shadow: 0 10px 24px rgba(199, 162, 106, 0.35); }
 .botao--dourado:hover { background: #D4B37F; border-color: #D4B37F; box-shadow: 0 14px 30px rgba(199, 162, 106, 0.45); }
 @media (max-width: 479px) { .botao { width: 100%; padding-inline: var(--e3); } }
@@ -134,9 +133,9 @@ s { text-decoration-thickness: 2px; }
 .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; min-height: 44px; }
 .marca__simbolo { width: auto; height: 44px; }
 .marca__nome { width: auto; height: 30px; }
-.cabecalho__cta { display: none; }
+
 @media (min-width: 768px) {
-  .cabecalho__cta { display: inline-flex; width: auto; }
+
   .marca__nome { height: 34px; }
 }
 @media (max-width: 359px) { .marca__nome { height: 24px; } }
@@ -150,27 +149,6 @@ s { text-decoration-thickness: 2px; }
 .secao--cafe { background: var(--cafe); color: var(--off); }
 
 /* ---------- Placeholders de imagem ---------- */
-.slot { position: relative; overflow: hidden; background: var(--nude-claro); }
-.slot > img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.slot--vazio {
-  background:
-    radial-gradient(120% 80% at 20% 0%, rgba(255, 253, 251, 0.9), transparent 60%),
-    linear-gradient(160deg, var(--nude-claro), var(--nude-medio));
-}
-.slot--vazio::before {
-  content: ""; position: absolute; inset: 0;
-  background: url("imagens/marca/simbolo.webp") center 42% / auto 34% no-repeat;
-  opacity: 0.38;
-}
-.slot--vazio::after {
-  content: attr(data-rotulo);
-  position: absolute; left: 50%; bottom: 10%; transform: translateX(-50%);
-  max-width: 86%; padding: 6px 12px;
-  border: 1px dashed rgba(74, 52, 46, 0.35); border-radius: var(--r-pill);
-  background: rgba(255, 253, 251, 0.75);
-  font-size: 0.6875rem; font-weight: 600; line-height: 1.3; color: var(--texto-suave);
-  text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
 
 /* ---------- Celular (mockup) ---------- */
 .celular {
@@ -192,8 +170,7 @@ s { text-decoration-thickness: 2px; }
 
 /* ---------- DOBRA 1 | HERO ---------- */
 .hero { position: relative; padding-block: var(--e5) var(--e10); overflow: hidden; }
-.hero__grade { display: grid; gap: var(--e6); align-items: center; }
-.hero__texto { text-align: center; }
+
 .hero__titulo {
   font-size: clamp(2.25rem, 1.4rem + 4.6vw, 4.25rem);
   line-height: 1.04; font-weight: 800; letter-spacing: -0.03em;
@@ -227,92 +204,26 @@ s { text-decoration-thickness: 2px; }
 }
 .celular--hero { width: 62%; margin-inline: auto; }
 
-.flutuante {
-  position: absolute; z-index: 3;
-  display: flex; align-items: center; gap: 10px;
-  max-width: 200px; padding: 10px 14px 10px 10px;
-  border: 1px solid var(--linha); border-radius: var(--r-md);
-  background: var(--branco); box-shadow: var(--sombra-2);
-  font-size: 0.75rem; font-weight: 700; line-height: 1.3; color: var(--cafe);
-}
-.flutuante__icone {
-  display: grid; place-items: center; flex: none;
-  width: 36px; height: 36px; border-radius: 10px;
-  background: var(--dourado-claro); color: var(--cafe);
-}
-.flutuante__icone .icone { width: 18px; height: 18px; }
-.flutuante--a { top: 56%; left: -2%; }
-.flutuante--b { top: 22%; right: -3%; }
-.flutuante--c { bottom: 6%; left: 0; }
-
 @media (min-width: 1024px) {
   .hero { padding-block: var(--e8) var(--e12); }
-  .hero__grade { grid-template-columns: repeat(12, 1fr); gap: var(--e4); }
-  .hero__texto { grid-column: 1 / span 6; text-align: left; }
+
   .hero__descricao { margin-inline: 0; }
   .seguranca { justify-content: flex-start; }
   .hero__visual { grid-column: 8 / span 5; width: 100%; }
-  .flutuante { font-size: 0.8125rem; max-width: 220px; }
-  .flutuante--a { left: -16%; }
-  .flutuante--b { right: -10%; }
-  .flutuante--c { left: -8%; }
+
 }
-@media (max-width: 479px) {
-  .flutuante { max-width: 150px; font-size: 0.6875rem; padding: 8px 10px 8px 8px; gap: 8px; }
-  .flutuante__icone { width: 30px; height: 30px; }
-  .flutuante--a { left: -2%; }
-  .flutuante--b { right: -2%; }
-}
+
 /* Primeira dobra mais compacta no celular */
 @media (max-width: 767px) {
   .hero { padding-top: var(--e3); }
-  .hero__grade { gap: var(--e3); }
+
   .seguranca { margin-top: var(--e2); }
   .hero__visual { padding-top: var(--e2); }
 }
 
 /* ---------- Layout dividido (texto + imagem) ---------- */
-.dividido { display: grid; gap: var(--e8); align-items: center; }
-@media (min-width: 1024px) {
-  .dividido { grid-template-columns: repeat(12, 1fr); gap: var(--e4); }
-  .dividido > .vitrine { grid-column: 1 / span 6; }
-  .dividido > .dividido__texto { grid-column: 7 / span 6; padding-left: var(--e3); }
-}
 
 /* ---------- DOBRA 2 | O QUE VOCÊ RECEBE ---------- */
-.vitrine__moldura {
-  position: relative;
-  display: flex; justify-content: center; align-items: center;
-  padding: var(--e2) 0 var(--e5);
-}
-.vitrine .celular--centro { position: relative; z-index: 2; width: 46%; }
-.vitrine .celular--lado { width: 36%; opacity: 0.98; }
-.vitrine .celular--lado .slot--vazio::after { display: none; }
-.vitrine .celular--esq { margin-right: -14%; transform: rotate(-6deg) translateY(6%); }
-.vitrine .celular--dir { margin-left: -14%; transform: rotate(6deg) translateY(6%); }
-@media (max-width: 599px) {
-  .vitrine .celular--centro { width: 56%; }
-  .vitrine .celular--lado { width: 42%; }
-  .vitrine .celular--esq { margin-right: -24%; }
-  .vitrine .celular--dir { margin-left: -24%; }
-}
-
-.recursos { display: grid; gap: var(--e2); margin: var(--e4) 0; }
-.recursos li { display: flex; align-items: center; gap: var(--e2); font-weight: 600; color: var(--grafite); line-height: 1.35; }
-.recursos__icone {
-  position: relative; display: grid; place-items: center; flex: none;
-  width: 44px; height: 44px; border-radius: var(--r-sm);
-  background: var(--nude-claro); color: var(--cafe);
-}
-.recursos__icone .icone { width: 20px; height: 20px; }
-.recursos__check {
-  position: absolute; right: -5px; bottom: -5px;
-  width: 18px; height: 18px; padding: 3px; border-radius: 50%;
-  background: var(--dourado); color: var(--branco);
-  fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round;
-  box-shadow: 0 0 0 2px var(--branco);
-}
-@media (min-width: 600px) { .recursos { grid-template-columns: 1fr 1fr; column-gap: var(--e3); } }
 
 /* ---------- DOBRA 3 | COMO FUNCIONA (linha do tempo, só texto) ---------- */
 .passos { position: relative; display: grid; gap: var(--e3); max-width: 1080px; margin: var(--e6) auto 0; }
@@ -392,7 +303,7 @@ s { text-decoration-thickness: 2px; }
 .depoimento:hover { translate: 0 -4px; }
 .depoimento__print { aspect-ratio: 4 / 5; border-radius: var(--r-md); }
 .depoimento__print > img { object-fit: contain; background: var(--branco); }
-.depoimento__print.slot--vazio { outline: 2px dashed rgba(199, 162, 106, 0.6); outline-offset: -10px; }
+
 @media (min-width: 768px) { .depoimentos { grid-template-columns: repeat(3, 1fr); } }
 
 /* ---------- DOBRA 5 | BÔNUS ---------- */
@@ -430,25 +341,8 @@ s { text-decoration-thickness: 2px; }
 .selo-incluido .icone { width: 14px; height: 14px; stroke-width: 3; }
 
 /* Placeholder de documento: folhas empilhadas */
-.slot--documento.slot--vazio::before {
-  inset: 14% 30% 26%;
-  border-radius: 6px;
-  background: var(--branco) url("imagens/marca/simbolo.webp") center 40% / auto 42% no-repeat;
-  opacity: 1;
-  box-shadow: 10px 8px 0 -2px rgba(255, 253, 251, 0.65), 0 10px 24px rgba(74, 52, 46, 0.14);
-  transform: rotate(-3deg);
-}
+
 /* Placeholder de planilha: grade */
-.slot--planilha.slot--vazio::before {
-  inset: 14% 14% 26%;
-  border-radius: 6px; opacity: 1;
-  background:
-    linear-gradient(var(--nude-medio), var(--nude-medio)) top / 100% 18% no-repeat,
-    repeating-linear-gradient(0deg, transparent 0 17px, rgba(74, 52, 46, 0.12) 17px 18px),
-    repeating-linear-gradient(90deg, transparent 0 47px, rgba(74, 52, 46, 0.12) 47px 48px),
-    var(--branco);
-  box-shadow: 0 10px 24px rgba(74, 52, 46, 0.14);
-}
 
 @media (min-width: 640px) { .bonus-grade { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) {
@@ -564,7 +458,7 @@ s { text-decoration-thickness: 2px; }
   padding: 14px var(--e3); border-radius: var(--r-md);
   border: 1px solid var(--linha); background: var(--off);
 }
-.prazo__plano { font-weight: 600; color: var(--texto-suave); }
+
 .prazo strong { font-size: 1.125rem; font-weight: 800; color: var(--cafe); }
 .prazo--premium { border-color: var(--dourado); background: var(--dourado-claro); }
 .garantia__destaque { margin-top: var(--e3); font-size: 1.25rem; font-weight: 700; color: var(--cafe) !important; }
@@ -632,7 +526,6 @@ s { text-decoration-thickness: 2px; }
 }
 
 /* Rótulo dos espaços reservados nos celulares fica no alto, longe dos selos flutuantes */
-.celular .slot--vazio::after { bottom: auto; top: 12%; }
 
 /* Logo do topo: o texto fica no centro da página e o símbolo fica ao lado, à esquerda */
 .cabecalho .marca { position: relative; }
@@ -651,7 +544,6 @@ s { text-decoration-thickness: 2px; }
   width: 26px; height: 26px; padding: 5px; border-radius: 50%;
   background: var(--dourado); color: var(--cafe-escuro); stroke-width: 3;
 }
-
 
 .topicos li {
   display: flex; align-items: center; gap: 12px;
@@ -673,10 +565,6 @@ s { text-decoration-thickness: 2px; }
   color: #8A6A3E;
 }
 .sobretitulo::before, .sobretitulo::after { content: ""; width: 28px; height: 1px; background: var(--dourado); }
-
-
-
-
 
 /* Vídeo de demonstração dentro do celular do topo */
 .celular__tela--video, .celular__tela--video:not(.slot--vazio) { padding-top: 0; overflow: hidden; background: #F8F4EF; }
@@ -776,18 +664,14 @@ s { text-decoration-thickness: 2px; }
 
 /* ===== v3.0.0 — estrutura PaginaPro (mesmo visual da página) ===== */
 /* Topo: nome do produto e 3 bullets */
-.hero__selo {
-  display: inline-block; margin-bottom: var(--e2); padding: 6px 14px; border-radius: var(--r-pill);
-  background: var(--nude-claro); border: 1px solid var(--nude);
-  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; color: var(--cafe);
-}
+
 .hero__descricao { margin-bottom: var(--e3); }
 .hero__bullets { display: grid; gap: 10px; max-width: 540px; margin: 0 auto var(--e4); text-align: left; }
 .hero__bullets li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.9875rem; line-height: 1.45; color: var(--grafite); }
 .hero__bullets .topicos__check { flex: none; width: 24px; height: 24px; padding: 5px; margin-top: 1px; }
 @media (min-width: 1024px) { .hero__bullets { margin-inline: 0; } }
 @media (max-width: 479px) {
-  .hero__selo { font-size: 0.625rem; letter-spacing: 0.04em; padding: 6px 10px; }
+
   .recebe__texto .sobretitulo::before, .recebe__texto .sobretitulo::after { display: none; }
 }
 
@@ -897,12 +781,7 @@ s { text-decoration-thickness: 2px; }
 .hero--empilhado .hero__visual { width: min(100%, 360px); margin: 0 auto; padding: var(--e2) 0; grid-column: auto; }
 .hero--empilhado .celular--hero { width: 180px; }
 .hero--empilhado .hero__circulo { width: 300px; }
-.hero--empilhado .flutuante { text-align: left; }
-.hero--empilhado .flutuante { max-width: 150px; font-size: 0.6875rem; padding: 8px 10px 8px 8px; gap: 8px; }
-.hero--empilhado .flutuante__icone { width: 30px; height: 30px; }
-.hero--empilhado .flutuante--a { top: 58%; left: -2%; }
-.hero--empilhado .flutuante--b { top: 18%; right: -2%; left: auto; }
-.hero--empilhado .flutuante--c { bottom: 4%; left: 4%; }
+
 .hero--empilhado .hero__descricao { max-width: 620px; margin: 0 auto; }
 .hero--empilhado .hero__bullets { display: inline-grid; gap: 8px; width: auto; max-width: 100%; margin: 0 auto; text-align: left; }
 .hero--empilhado .hero__bullets li { align-items: center; font-size: 1rem; font-weight: 600; line-height: 1.35; }
@@ -912,10 +791,7 @@ s { text-decoration-thickness: 2px; }
   .hero--empilhado .celular--hero { width: 205px; }
   .hero--empilhado .hero__circulo { width: 340px; }
   .hero--empilhado .hero__visual { width: 400px; }
-  .hero--empilhado .flutuante { max-width: 170px; font-size: 0.75rem; }
-  .hero--empilhado .flutuante--a { left: -10%; }
-  .hero--empilhado .flutuante--b { right: -10%; }
-  .hero--empilhado .flutuante--c { left: -4%; }
+
 }
 
 /* Página estática (pedido do Luiz, 03/11/2026): sem animações de entrada, sem movimento ao passar o mouse

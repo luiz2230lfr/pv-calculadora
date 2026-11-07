@@ -3,7 +3,6 @@
 
   var config = window.CONFIG || {};
   var links = {
-    basico: config.CHECKOUT_BASICO_URL,
     premium: config.CHECKOUT_PREMIUM_URL,
   };
 
@@ -47,24 +46,6 @@
   }
 
   var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // Vídeo de demonstração: só começa a baixar 2 s depois de a página carregar (a capa aparece antes),
-  // toca quando está visível e pausa fora da tela. Quem prefere menos movimento vê só a capa.
-  document.querySelectorAll("video.video-demo").forEach(function (video) {
-    if (reduzirMovimento) return;
-    function iniciar() {
-      if (!("IntersectionObserver" in window)) { video.play().catch(function () {}); return; }
-      new IntersectionObserver(function (entradas) {
-        entradas.forEach(function (e) {
-          if (e.isIntersecting) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
-          else video.pause();
-        });
-      }, { threshold: 0.25 }).observe(video);
-    }
-    function iniciarDepois() { setTimeout(iniciar, 2000); }
-    if (document.readyState === "complete") iniciarDepois();
-    else window.addEventListener("load", iniciarDepois, { once: true });
-  });
 
   // Depoimentos: as imagens só começam a baixar quando a seção está chegando perto da tela
   // (não disputam internet com o topo da página).
