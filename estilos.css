@@ -617,7 +617,9 @@ s { text-decoration-thickness: 2px; }
 
 /* ---------- Rodapé ---------- */
 .rodape { background: var(--off); border-top: 1px solid var(--linha); padding-block: var(--e6); }
-.rodape__interno { display: flex; justify-content: center; }
+.rodape__interno { display: flex; flex-direction: column; align-items: center; gap: var(--e2); }
+.rodape__links { margin: 0; font-size: 0.875rem; }
+.rodape__links a { color: var(--texto-suave); text-underline-offset: 3px; }
 .rodape__logo { width: 200px; }
 
 /* ---------- Animação de entrada ---------- */

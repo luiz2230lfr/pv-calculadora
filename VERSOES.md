@@ -1,5 +1,8 @@
 # Histórico de versões da página de vendas
 
+## v3.0.6 — 07/11/2026 (página A)
+- Nova página politica-de-privacidade.html (LGPD; responsável 48.318.852 LUIZ FERNANDO DA ROSA JOAO, CNPJ 48.318.852/0001-58; contato luizdigital2002@gmail.com). A seção 9, "Exclusão de dados", tem link direto (#exclusao-de-dados) para o campo do app da Meta. A página não tem rastreadores. Link discreto no rodapé da página de vendas. Cópia sem rastreio atualizada (agora inclui a política).
+
 ## v3.0.5 — 07/11/2026 (página A)
 - Checkout trocado para a Wiapy: https://pay.wiapy.com/ghDp34F5ud74 (antes Greenn 813490). Card: "à vista ou em até 9x de R$ 5,49 no cartão" (antes "em até 12x"). Cópia sem rastreio atualizada.
 

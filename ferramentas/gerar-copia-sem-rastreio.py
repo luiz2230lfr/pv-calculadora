@@ -14,7 +14,7 @@ from pathlib import Path
 
 ORIGEM = Path(__file__).resolve().parent.parent
 DESTINO = ORIGEM.parent / "2 - Página de Vendas - Visualizar sem rastreio"
-ARQUIVOS = ["index.html", "estilos.css", "script.js", "config.js"]
+ARQUIVOS = ["index.html", "estilos.css", "script.js", "config.js", "politica-de-privacidade.html"]
 PASTAS = ["imagens", "fontes"]
 
 
